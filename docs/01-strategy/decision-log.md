@@ -19,6 +19,7 @@ Records key product decisions, the reasoning behind them, and open questions.
 | 12 | Initial targets: completeness ≥ 90%, citation correctness ≥ 95%, zero generated medical advice, preparedness +1 point | Starting points; to be finalized in the PRD |
 | 13 | Proposed: MVP retrieval covers the patient's own documents; external knowledge base is Phase 2 | Fits the 36-hour budget; the most important citations point to the patient's documents |
 | 14 | GitHub topics describe a workflow, not agents (`workflow-automation`, not `llm-agents`) | Never claim more than the product does |
+| 15 | Stage 2 method: email interviews (5–8 participants) + desk research | Fits the founder's schedule; written answers are weaker than live interviews, so each participant gets one follow-up |
 
 ## Open questions (Stage 2)
 - 🚩 **Riskiest strategic question:** is the information disorganized, or missing? See assumptions.md for the full ranked list.
@@ -29,6 +30,8 @@ Records key product decisions, the reasoning behind them, and open questions.
 - Do after-visit tasks (for example, dropping off a sample) cause similar problems?
 
 ## Candidate features (evaluate in Stage 4)
+- Photo upload for paper documents (desk research: not all patients use portals)
+- Data minimization: upload only the instructions page, or paste text (desk research: low trust in health-tech companies)
 - Reminders (email/SMS)
 - "Ask the clinic" checklist items for information missing from documents
 - After-visit task tracking

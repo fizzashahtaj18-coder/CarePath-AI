@@ -38,7 +38,14 @@ Risk types follow the four product risks: **Value** (do people want it?), **Usab
 - **#8 (who pays)** can't be reliably validated in 5–8 interviews. People say "I'd pay" easily. It's a lower priority for a portfolio prototype.
 - **#9 (regulation)** is handled by desk research and by the product's strict administration-only boundary.
 
-## Status
-| # | Status |
-|---|---|
-| 1–9 | ⏳ Untested. Results will be recorded here after Stage 2. |
+## Status after desk research (October 30, 2026)
+Desk research gives *general* evidence only. Interview results will be added after the email interviews. See [desk-research.md](../02-discovery/desk-research.md).
+
+| # | Desk research signal | Status |
+|---|---|---|
+| 1, 2 | ⬆️ Supported in general: spoken instructions are widely forgotten; referral information is often incomplete | ⏳ Interviews pending |
+| 3 | ⬇️ Weakened: much key information is spoken or missing, not written | ⏳ Interviews pending |
+| 4 | ↔️ Partly supported: most adults use portals, not all; records are scattered | ⏳ Interviews pending |
+| 5 | ⬇️ Weakened: low trust in health-tech companies; endorsement and user control help | ⏳ Interviews pending |
+| 6, 7, 8 | No desk research yet | ⏳ Later stages |
+| 9 | ↔️ Unclear: FDA admin exclusion targets facilities; FTC Health Breach Notification Rule likely applies | ⏳ Stage 12 |
