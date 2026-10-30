@@ -4,7 +4,7 @@
 
 CarePath AI is an AI Product Management portfolio project. It is a web application concept that turns scattered appointment documents and instructions into one editable preparation checklist, with a source citation for every item.
 
-🚧 **Project status:** Stage 1 (Product Vision & Strategy) complete. Next: Stage 2, User Discovery.
+🚧 **Project status:** Stage 2, User Discovery (desk research done; email interviews in progress).
 
 ---
 
@@ -41,7 +41,7 @@ First-time specialist patients often don't know exactly what to bring or do befo
 | Stage | Focus | Status |
 |---|---|---|
 | 1 | Product vision & strategy | ✅ Complete |
-| 2 | Discovery & user interviews | ⏳ Next |
+| 2 | Discovery & user interviews | 🔄 In progress |
 | 3 | Personas & competitor analysis | |
 | 4 | Prioritization & MVP scope | |
 | 5 | Product Requirements Document | |
@@ -56,12 +56,16 @@ First-time specialist patients often don't know exactly what to bring or do befo
 ## Repository structure
 ```
 docs/
-└── 01-strategy/
-    ├── product-vision.md     Product Vision Document
-    ├── problem-statement.md  Problem and success metrics
-    ├── assumptions.md        Assumptions & risk map
-    ├── decision-log.md       Key decisions and open questions
-    └── origin-story.md       Why this product exists
+├── 01-strategy/
+│   ├── product-vision.md     Product Vision Document
+│   ├── problem-statement.md  Problem and success metrics
+│   ├── assumptions.md        Assumptions & risk map
+│   ├── decision-log.md       Key decisions and open questions
+│   └── origin-story.md       Why this product exists
+└── 02-discovery/
+    ├── desk-research.md       Published evidence on our assumptions
+    ├── email-interview-kit.md Interview emails and question plan
+    └── findings.md            Interview results (in progress)
 ```
 More folders will be added as each stage begins.
 
