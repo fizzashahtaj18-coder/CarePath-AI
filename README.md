@@ -4,7 +4,7 @@
 
 CarePath AI is an AI Product Management portfolio project. It is a web application concept that turns scattered appointment documents and instructions into one editable preparation checklist, with a source citation for every item.
 
-🚧 **Project status:** Stage 2 email interviews in progress · Stage 3 competitor analysis complete (personas pending interview results).
+🚧 **Project status:** Interim discovery findings and proto-personas complete · email interviews in progress to validate them.
 
 ---
 
@@ -41,8 +41,8 @@ First-time specialist patients often don't know exactly what to bring or do befo
 | Stage | Focus | Status |
 |---|---|---|
 | 1 | Product vision & strategy | ✅ Complete |
-| 2 | Discovery & user interviews | 🔄 In progress |
-| 3 | Personas & competitor analysis | 🔄 Competitors done; personas pending |
+| 2 | Discovery & user interviews | 🔄 Interim findings done; interviews pending |
+| 3 | Personas & competitor analysis | 🔄 Competitors done; proto-personas pending validation |
 | 4 | Prioritization & MVP scope | |
 | 5 | Product Requirements Document | |
 | 6 | Agile backlog (Jira) | |
@@ -65,9 +65,10 @@ docs/
 ├── 02-discovery/
 │   ├── desk-research.md       Published evidence on our assumptions
 │   ├── email-interview-kit.md Interview emails and question plan
-│   └── findings.md            Interview results (in progress)
+│   └── findings.md            Interim findings + interview results
 └── 03-research/
-    └── competitor-analysis.md Alternatives, gaps, and differentiation
+    ├── competitor-analysis.md Alternatives, gaps, and differentiation
+    └── proto-personas.md      Assumption-based personas (to validate)
 ```
 More folders will be added as each stage begins.
 
