@@ -40,6 +40,7 @@ Records key product decisions, the reasoning behind them, and open questions.
 | 33 | Model: shortlist small, low-cost models (~$0.002 per checklist); final pick by test-set results and provider data terms in Stage 9; LLM behind a swappable wrapper | Cost isn't the constraint; quality and data terms are |
 | 34 | After Round 1 (3 email responses): keep "Revise (provisional)" and the MVP scope; assumptions #3, #4, #5 stay untested; P3 is out of segment (follow-up visit); all new participants get the full 10-question kit | Round 1 used a shorter question set; avoid over-claiming. See findings.md Part B |
 | 35 | Evaluation set complete: 10 synthetic sets, 9 specialties, 47 required items; optional items not scored; Set 08 uses a real image-only PDF; Set 09 expects "no instructions found" | Defines "correct" before any code is written (CPA-9) |
+| 36 | Evaluation script validated: perfect outputs score 100%, planted mistakes are all caught. Added `forbidden_phrases` because an injected instruction passed the citation check | Citation checks alone can't stop prompt injection; safety needs layered checks (ADR-7) |
 
 ## Open questions (Stage 2)
 - 🚩 **Riskiest strategic question:** is the information disorganized, or missing? See assumptions.md for the full ranked list.
