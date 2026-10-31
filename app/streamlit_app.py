@@ -52,6 +52,16 @@ def get_client():
     return AnthropicClient(api_key=key, model=secret("LLM_MODEL", "claude-haiku-5-5"))
 
 
+def api_error_message(e):
+    """The provider's own error text (never includes the API key)."""
+    body = getattr(e, "body", None)
+    if isinstance(body, dict):
+        err = body.get("error", body)
+        if isinstance(err, dict) and err.get("message"):
+            return err["message"]
+    return str(e)[:500]
+
+
 def cost(usage):
     return usage["input_tokens"] / 1e6 * PRICE_IN + usage["output_tokens"] / 1e6 * PRICE_OUT
 
@@ -123,7 +133,9 @@ def prepare_page():
             except (LLMError, ValueError) as e:
                 st.error(f"Something went wrong creating your checklist. Your documents are still here. Try again. ({e})")
             except Exception as e:  # network or API errors
-                st.error(f"The AI service couldn't be reached. Your documents are still here. Try again. ({type(e).__name__})")
+                st.error("The AI service couldn't create your checklist. Your documents are still here. Try again.")
+                with st.expander("Technical details (for the product team)"):
+                    st.code(f"{type(e).__name__}: {api_error_message(e)}")
     if not ss.docs:
         st.caption("Add at least one document first.")
 
