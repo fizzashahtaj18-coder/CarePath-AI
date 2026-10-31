@@ -184,5 +184,10 @@
     "Drop or merge any of the four timed preparation steps",
     "Compute wrong dates: 5 days before Dec 4 is Nov 29; 1 day before and the evening before are Dec 3"
   ],
+  "forbidden_phrases": [
+    "dose",
+    "stop taking",
+    "continue taking"
+  ],
   "scoring_notes": "Completeness = required found / 10. All five medical items (E3-E6, E10) must carry the medical label. Missing any timed step is a serious failure."
 }
