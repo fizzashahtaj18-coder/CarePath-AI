@@ -1,0 +1,85 @@
+{
+  "set_id": "set06",
+  "outcome": "checklist",
+  "document_errors": [],
+  "items": [
+    {
+      "text": "Have fasting blood work done at least one week before the visit",
+      "category": "Before-date",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Please have fasting blood work done at least one week before the visit."
+        }
+      ],
+      "medical_instruction": true
+    },
+    {
+      "text": "Arrive 10 minutes early",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Please arrive 10 minutes early."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Photo ID",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Bring your photo ID, your insurance card, and your glucose meter or log if you have one."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Insurance card",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Bring your photo ID, your insurance card, and your glucose meter or log if you have one."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Glucose meter or log, if you have one",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Bring your photo ID, your insurance card, and your glucose meter or log if you have one."
+        }
+      ],
+      "medical_instruction": false
+    }
+  ],
+  "conflicts": [
+    {
+      "topic": "appointment_date",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "The appointment is scheduled for Tuesday, January 12, 2027 at 11:00 AM."
+        },
+        {
+          "doc": "D2",
+          "quote": "Your appointment is confirmed for Thursday, January 14, 2027 at 11:00 AM."
+        }
+      ]
+    }
+  ],
+  "missing_topics": [
+    "referral_on_file",
+    "previous_records",
+    "medication_list",
+    "location_parking",
+    "forms",
+    "reschedule_cancel"
+  ]
+}

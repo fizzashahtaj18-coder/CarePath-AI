@@ -1,0 +1,83 @@
+{
+  "set_id": "set10",
+  "outcome": "checklist",
+  "document_errors": [],
+  "items": [
+    {
+      "text": "Insurance card",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Please bring your insurance card and photo ID."
+        },
+        {
+          "doc": "D2",
+          "quote": "Bring insurance card + photo ID."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Photo ID",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Please bring your insurance card and photo ID."
+        },
+        {
+          "doc": "D2",
+          "quote": "Bring insurance card + photo ID."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Arrive 15 minutes early",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Please arrive 15 minutes early."
+        },
+        {
+          "doc": "D2",
+          "quote": "Arrive 15 min early."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Complete the registration form online by December 18",
+      "category": "Before-date",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Complete the registration form online by December 18."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Reply C to the reminder text to confirm",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Reply C to confirm."
+        }
+      ],
+      "medical_instruction": false
+    }
+  ],
+  "conflicts": [],
+  "missing_topics": [
+    "referral_on_file",
+    "previous_records",
+    "medication_list",
+    "test_preparation",
+    "location_parking",
+    "reschedule_cancel"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "set_id": "set08",
+  "outcome": "checklist",
+  "document_errors": [
+    {
+      "doc": "D1",
+      "error": "no_extractable_text"
+    }
+  ],
+  "items": [
+    {
+      "text": "All medicine bottles",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Bring all medicine bottles"
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Arrive 20 minutes early",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Arrive 20 min early"
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Get blood drawn at the lab the week before",
+      "category": "Before-date",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Get blood drawn at the lab the week before"
+        }
+      ],
+      "medical_instruction": true
+    }
+  ],
+  "conflicts": [],
+  "missing_topics": [
+    "photo_id",
+    "insurance_card",
+    "referral_on_file",
+    "previous_records",
+    "location_parking",
+    "forms",
+    "reschedule_cancel"
+  ]
+}

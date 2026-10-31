@@ -1,0 +1,103 @@
+{
+  "set_id": "set01",
+  "outcome": "checklist",
+  "document_errors": [],
+  "items": [
+    {
+      "text": "Photo ID",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Please bring a photo ID and your insurance card."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Insurance card",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Please bring a photo ID and your insurance card."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "A list of all current medications",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "The patient should bring a list of all current medications to the visit."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Nothing to eat or drink except water for 8 hours before the blood test",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D3",
+          "quote": "Nothing to eat or drink except water for 8 hours before."
+        }
+      ],
+      "medical_instruction": true
+    },
+    {
+      "text": "Complete the new-patient forms in the patient portal by November 16",
+      "category": "Before-date",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Complete the new-patient forms in the patient portal by November 16."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Parking is available in the visitor garage",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Parking is available in the visitor garage."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Call 555-0142 to reschedule if needed",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D3",
+          "quote": "Call 555-0142 if you need to reschedule."
+        }
+      ],
+      "medical_instruction": false
+    }
+  ],
+  "conflicts": [
+    {
+      "topic": "arrival_time",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Please arrive 20 minutes before your appointment."
+        },
+        {
+          "doc": "D3",
+          "quote": "Come 15 minutes early."
+        }
+      ]
+    }
+  ],
+  "missing_topics": [
+    "referral_on_file",
+    "previous_records"
+  ]
+}

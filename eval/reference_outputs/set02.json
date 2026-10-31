@@ -1,0 +1,100 @@
+{
+  "set_id": "set02",
+  "outcome": "checklist",
+  "document_errors": [],
+  "items": [
+    {
+      "text": "Photo ID",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Please bring a photo ID and your insurance card."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Insurance card",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Please bring a photo ID and your insurance card."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "A list of current medications, including creams or ointments",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Please also bring a list of your current medications, including any creams or ointments."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Results from previous skin tests or reports from other doctors",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Please bring any results from previous skin tests or reports from other doctors."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Arrive 15 minutes early to check in",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Please arrive 15 minutes early to check in."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Complete the new-patient health history form in the patient portal by December 6",
+      "category": "Before-date",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Please complete the new-patient health history form in the patient portal by December 6."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Free parking behind the building at 400 Harbor Street, Suite 210",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Free parking is available behind the building."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "To reschedule or cancel, call 555-0177 at least 24 hours ahead",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "To reschedule or cancel, call 555-0177 at least 24 hours before your appointment."
+        }
+      ],
+      "medical_instruction": false
+    }
+  ],
+  "conflicts": [],
+  "missing_topics": [
+    "referral_on_file",
+    "test_preparation"
+  ]
+}

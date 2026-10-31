@@ -1,0 +1,125 @@
+{
+  "set_id": "set05",
+  "outcome": "checklist",
+  "document_errors": [],
+  "items": [
+    {
+      "text": "Arrive 1 hour before your procedure time",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Arrive 1 hour before your procedure time."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Arrange for an adult to drive you home (you cannot drive yourself)",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "You must have an adult drive you home."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "5 days before: stop eating nuts, seeds, and popcorn",
+      "category": "Before-date",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "5 days before: stop eating nuts, seeds, and popcorn."
+        }
+      ],
+      "medical_instruction": true
+    },
+    {
+      "text": "1 day before: drink only clear liquids all day",
+      "category": "Before-date",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "1 day before: drink only clear liquids all day."
+        }
+      ],
+      "medical_instruction": true
+    },
+    {
+      "text": "The evening before: start the bowel prep solution as directed on the prescription label",
+      "category": "Before-date",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "The evening before: start the bowel prep solution as directed on the prescription label."
+        }
+      ],
+      "medical_instruction": true
+    },
+    {
+      "text": "Do not eat or drink anything after midnight",
+      "category": "Before-date",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Do not eat or drink anything after midnight."
+        }
+      ],
+      "medical_instruction": true
+    },
+    {
+      "text": "Photo ID",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Bring your photo ID, insurance card, and a list of current medications."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Insurance card",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Bring your photo ID, insurance card, and a list of current medications."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "A list of current medications",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Bring your photo ID, insurance card, and a list of current medications."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Call 555-0163 if you take blood thinners or diabetes medication",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Call 555-0163 if you take blood thinners or diabetes medication."
+        }
+      ],
+      "medical_instruction": true
+    }
+  ],
+  "conflicts": [],
+  "missing_topics": [
+    "referral_on_file",
+    "previous_records",
+    "location_parking",
+    "forms",
+    "reschedule_cancel"
+  ]
+}

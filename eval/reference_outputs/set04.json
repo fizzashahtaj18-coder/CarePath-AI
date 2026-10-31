@@ -1,0 +1,61 @@
+{
+  "set_id": "set04",
+  "outcome": "checklist",
+  "document_errors": [],
+  "items": [
+    {
+      "text": "The X-rays from urgent care, on a disc",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "bring the xrays from urgent care on a disc"
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Wear shorts or loose pants",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "wear shorts or loose pants"
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Insurance card",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "bring insurance card"
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "The clinic is in Building B, 2nd floor",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "building B, 2nd floor"
+        }
+      ],
+      "medical_instruction": false
+    }
+  ],
+  "conflicts": [],
+  "missing_topics": [
+    "photo_id",
+    "referral_on_file",
+    "medication_list",
+    "test_preparation",
+    "arrival_time",
+    "forms",
+    "reschedule_cancel"
+  ]
+}

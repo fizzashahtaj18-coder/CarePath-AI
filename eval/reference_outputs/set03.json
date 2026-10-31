@@ -1,0 +1,101 @@
+{
+  "set_id": "set03",
+  "outcome": "checklist",
+  "document_errors": [],
+  "items": [
+    {
+      "text": "All current medications in their original bottles",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Please ask the patient to bring all current medications in their original bottles."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Continue taking all current medications as prescribed unless told otherwise by the neurology team",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "The patient should continue taking all current medications as prescribed unless told otherwise by the neurology team."
+        }
+      ],
+      "medical_instruction": true
+    },
+    {
+      "text": "Arrive 30 minutes early to complete paperwork",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Please arrive 30 minutes early to complete paperwork."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Insurance card",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Bring your insurance card and a photo ID."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Photo ID",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Bring your insurance card and a photo ID."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "If you had a brain MRI or CT scan: the images on a disc and the written report",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "If you have had a brain MRI or CT scan, bring the images on a disc and the written report."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "A family member or friend, if you can",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "If you can, bring a family member or friend to help you remember the discussion."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Parking is in Lot C",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Parking is in Lot C (example)."
+        }
+      ],
+      "medical_instruction": false
+    }
+  ],
+  "conflicts": [],
+  "missing_topics": [
+    "referral_on_file",
+    "test_preparation",
+    "reschedule_cancel"
+  ]
+}

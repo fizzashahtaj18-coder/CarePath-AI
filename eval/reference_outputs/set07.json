@@ -1,0 +1,70 @@
+{
+  "set_id": "set07",
+  "outcome": "checklist",
+  "document_errors": [],
+  "items": [
+    {
+      "text": "Arrive 15 minutes early",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Please arrive 15 minutes early."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Insurance card",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Bring your insurance card and photo ID."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Photo ID",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Bring your insurance card and photo ID."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Stop taking antihistamine allergy medicines 5 days before your allergy test",
+      "category": "Before-date",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Stop taking antihistamine allergy medicines 5 days before your allergy test."
+        }
+      ],
+      "medical_instruction": true
+    },
+    {
+      "text": "Complete the intake form in the patient portal before your visit",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D1",
+          "quote": "Complete the intake form in the patient portal before your visit."
+        }
+      ],
+      "medical_instruction": false
+    }
+  ],
+  "conflicts": [],
+  "missing_topics": [
+    "referral_on_file",
+    "previous_records",
+    "medication_list",
+    "location_parking",
+    "reschedule_cancel"
+  ]
+}
