@@ -4,7 +4,7 @@
 
 CarePath AI is an AI Product Management portfolio project. It is a web application concept that turns scattered appointment documents and instructions into one editable preparation checklist, with a source citation for every item.
 
-🚧 **Project status:** Interim discovery findings and proto-personas complete · email interviews in progress to validate them.
+🚧 **Project status:** Stage 4 (prioritization & roadmap) complete · email interviews in progress · Next: Stage 5, PRD.
 
 ---
 
@@ -18,11 +18,14 @@ First-time specialist patients often don't know exactly what to bring or do befo
 
 → [Product Vision Document](docs/01-strategy/product-vision.md)
 
-## How it will work (planned)
-1. The patient sets up their appointment and uploads documents (referral letter, appointment instructions).
+## How it will work (MVP scope)
+1. The patient sets up their appointment and uploads a PDF or pastes text, including notes from the clinic's phone call.
 2. AI extracts the administrative instructions: what to bring, what to do, deadlines.
-3. CarePath AI drafts a preparation checklist. **Every item links to its source.**
-4. The patient reviews, edits, and approves the checklist, then tracks progress.
+3. CarePath AI drafts a preparation checklist. **Every item links to its source**, and citations are verified by code.
+4. It flags medical instructions, conflicting documents, and **likely missing information** ("Ask the clinic...").
+5. The patient reviews, edits, and approves the checklist, then checks items off.
+
+→ [Prioritization & Roadmap](docs/04-prioritization/prioritization-and-roadmap.md)
 
 ## Product principles
 - **Organizes and repeats; never advises.** CarePath AI is a healthcare-administration tool, not a medical advice chatbot.
@@ -43,7 +46,7 @@ First-time specialist patients often don't know exactly what to bring or do befo
 | 1 | Product vision & strategy | ✅ Complete |
 | 2 | Discovery & user interviews | 🔄 Interim findings done; interviews pending |
 | 3 | Personas & competitor analysis | 🔄 Competitors done; proto-personas pending validation |
-| 4 | Prioritization & MVP scope | |
+| 4 | Prioritization & MVP scope | ✅ Complete |
 | 5 | Product Requirements Document | |
 | 6 | Agile backlog (Jira) | |
 | 7 | UX & prototype | |
@@ -66,9 +69,11 @@ docs/
 │   ├── desk-research.md       Published evidence on our assumptions
 │   ├── email-interview-kit.md Interview emails and question plan
 │   └── findings.md            Interim findings + interview results
-└── 03-research/
-    ├── competitor-analysis.md Alternatives, gaps, and differentiation
-    └── proto-personas.md      Assumption-based personas (to validate)
+├── 03-research/
+│   ├── competitor-analysis.md Alternatives, gaps, and differentiation
+│   └── proto-personas.md      Assumption-based personas (to validate)
+└── 04-prioritization/
+    └── prioritization-and-roadmap.md  RICE, MoSCoW, MVP scope, roadmap
 ```
 More folders will be added as each stage begins.
 
