@@ -4,7 +4,7 @@
 
 CarePath AI is an AI Product Management portfolio project. It is a web application concept that turns scattered appointment documents and instructions into one editable preparation checklist, with a source citation for every item.
 
-🚧 **Project status:** Stage 4 (prioritization & roadmap) complete · email interviews in progress · Next: Stage 5, PRD.
+🚧 **Project status:** PRD v0.1 drafted (Stage 5) · email interviews in progress · Next: Stage 6, Jira backlog.
 
 ---
 
@@ -25,7 +25,7 @@ First-time specialist patients often don't know exactly what to bring or do befo
 4. It flags medical instructions, conflicting documents, and **likely missing information** ("Ask the clinic...").
 5. The patient reviews, edits, and approves the checklist, then checks items off.
 
-→ [Prioritization & Roadmap](docs/04-prioritization/prioritization-and-roadmap.md)
+→ [Prioritization & Roadmap](docs/04-prioritization/prioritization-and-roadmap.md) · [PRD](docs/05-prd/prd.md)
 
 ## Product principles
 - **Organizes and repeats; never advises.** CarePath AI is a healthcare-administration tool, not a medical advice chatbot.
@@ -47,7 +47,7 @@ First-time specialist patients often don't know exactly what to bring or do befo
 | 2 | Discovery & user interviews | 🔄 Interim findings done; interviews pending |
 | 3 | Personas & competitor analysis | 🔄 Competitors done; proto-personas pending validation |
 | 4 | Prioritization & MVP scope | ✅ Complete |
-| 5 | Product Requirements Document | |
+| 5 | Product Requirements Document | 🟡 v0.1 draft |
 | 6 | Agile backlog (Jira) | |
 | 7 | UX & prototype | |
 | 8 | Technical & AI architecture | |
@@ -72,8 +72,10 @@ docs/
 ├── 03-research/
 │   ├── competitor-analysis.md Alternatives, gaps, and differentiation
 │   └── proto-personas.md      Assumption-based personas (to validate)
-└── 04-prioritization/
-    └── prioritization-and-roadmap.md  RICE, MoSCoW, MVP scope, roadmap
+├── 04-prioritization/
+│   └── prioritization-and-roadmap.md  RICE, MoSCoW, MVP scope, roadmap
+└── 05-prd/
+    └── prd.md                 Product Requirements Document (v0.1)
 ```
 More folders will be added as each stage begins.
 
