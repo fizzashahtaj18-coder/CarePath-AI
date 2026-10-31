@@ -32,7 +32,7 @@ Full version: [Problem Statement](problem-statement.md). This is a **hypothesis*
 The target audience will not expand without evidence and an explicit decision recorded in the [Decision Log](decision-log.md).
 
 ## 6. Value proposition
-> **For** first-time specialist patients **who** feel unsure what to bring and do before their appointment, **CarePath AI** is a web app **that** turns their appointment documents into one clear, editable checklist. **Unlike** phone calls, paper letters, and memory, **every checklist item links back to its source**, and the patient reviews and approves it.
+> **For** first-time specialist patients **who** feel unsure what to bring and do before their appointment, **CarePath AI** is a web app **that** turns their appointment documents into one clear, editable checklist. **Unlike** phone calls, clinic portals, and general AI chatbots, **every checklist item links back to its source**, missing information is flagged, and the patient reviews and approves it. See [Competitor Analysis](../03-research/competitor-analysis.md).
 
 | Value | Role |
 |---|---|
