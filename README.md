@@ -4,7 +4,7 @@
 
 CarePath AI is an AI Product Management portfolio project. It is a web application concept that turns scattered appointment documents and instructions into one editable preparation checklist, with a source citation for every item.
 
-🚧 **Project status:** Sprint 0 complete ✅ (evaluation set + scoring script) · Next: Sprint 1, first working checklist · user research continuing.
+🚧 **Project status:** Sprint 1 code ready: paste instructions → draft checklist with sources (Claude Haiku 5.5) · Next: deploy and run the first real evaluation · user research continuing.
 
 ---
 
@@ -89,8 +89,12 @@ docs/
 ```
 ```
 app/
-├── streamlit_app.py           App (placeholder until Sprint 1)
-└── pipeline/                  Pipeline modules (Sprints 1-4)
+├── streamlit_app.py           App: patient page + Evaluation (PM) page
+└── pipeline/                  chunk, schema, llm, ingest, checklist
+prompts/
+└── checklist_v1.md            Versioned system prompt
+tests/
+└── test_pipeline.py           7 tests with a fake LLM (no API cost)
 config/
 └── topics.yaml                Common administrative topics (PM-reviewed)
 eval/
