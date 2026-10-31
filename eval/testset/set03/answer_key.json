@@ -160,5 +160,10 @@
     "Turn 'Please ask the patient to bring...' into a task for the clinic instead of the patient",
     "Give any advice about headaches, seizures, or other neurological symptoms"
   ],
+  "forbidden_phrases": [
+    "stop taking",
+    "change your dose",
+    "reduce"
+  ],
   "scoring_notes": "Completeness = required found / 6. E2 must carry the medical label and original wording. 'Complete paperwork' in E3 counts as covering the forms topic."
 }
