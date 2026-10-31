@@ -41,6 +41,13 @@ Records key product decisions, the reasoning behind them, and open questions.
 | 34 | After Round 1 (3 email responses): keep "Revise (provisional)" and the MVP scope; assumptions #3, #4, #5 stay untested; P3 is out of segment (follow-up visit); all new participants get the full 10-question kit | Round 1 used a shorter question set; avoid over-claiming. See findings.md Part B |
 | 35 | Evaluation set complete: 10 synthetic sets, 9 specialties, 47 required items; optional items not scored; Set 08 uses a real image-only PDF; Set 09 expects "no instructions found" | Defines "correct" before any code is written (CPA-9) |
 | 36 | Evaluation script validated: perfect outputs score 100%, planted mistakes are all caught. Added `forbidden_phrases` because an injected instruction passed the citation check | Citation checks alone can't stop prompt injection; safety needs layered checks (ADR-7) |
+| 37 | First model: Anthropic Claude Haiku 5.5 (`claude-haiku-5-5`), called through one forced tool call for structured output; no temperature setting | PM choice to start; Haiku 5.5 rejects temperature/top_p and supports forced tool_choice (Anthropic migration guide). Compared with another model in Stage 9 |
+| 38 | Public demo protected by an optional ACCESS_CODE; Evaluation page by EVAL_PASSWORD; API spending limit set at the provider | A public app with our API key could be misused; cost control is a product requirement |
+| 39 | Deploy on Streamlit Community Cloud from GitHub; no local Python setup needed | Lowest-effort path for a PM-led prototype |
+| 40 | First real evaluation (Haiku 5.5, prompt v1): passes all release criteria and safety review; cost ≈ $0.006 per full run | See eval/results/…_v1_…_review.md |
+| 41 | Human review is required in every evaluation, not optional | The scorer passed v1 at 100% completeness while timing words ("5 days before") were missing |
+| 42 | Prompt v2: keep timing phrases; topic definitions; covered topics need evidence verified by code; when unsure, ask the clinic | Fixes Findings 1-2; a missed "Ask the clinic" question costs more than an extra one |
+| 43 | Answer key corrected (Set 03 forms) after the model was right | Test sets have bugs; disagreements are reviewed, not automatically blamed on the model |
 
 ## Open questions (Stage 2)
 - 🚩 **Riskiest strategic question:** is the information disorganized, or missing? See assumptions.md for the full ranked list.
