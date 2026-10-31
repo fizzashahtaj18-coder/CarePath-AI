@@ -2,8 +2,8 @@
 
 | | |
 |---|---|
-| **Version** | v0.1 (Draft) |
-| **Status** | 🟡 Draft. Based on interim discovery findings; to be updated when email interview results arrive |
+| **Version** | v0.2 (Draft) |
+| **Status** | 🟡 Draft. Based on interim findings + Round 1 interviews (3 early responses, none screened). v1.0 after screened interviews |
 | **Owner** | Product Manager, CarePath AI |
 | **Last updated** | October 30, 2026 |
 | **Related docs** | [Vision](../01-strategy/product-vision.md) · [Findings](../02-discovery/findings.md) · [Personas](../03-research/proto-personas.md) · [Prioritization](../04-prioritization/prioritization-and-roadmap.md) · [Decision log](../01-strategy/decision-log.md) |
@@ -20,7 +20,7 @@ CarePath AI is a web application that helps **first-time specialist patients in 
 
 First-time specialist patients don't reliably know what to bring and do before their appointment. Some instructions are **scattered** across sources, some are **spoken and forgotten**, and some are **never given**. As a result, patients arrive anxious and focused on paperwork, may hold back information, and forget their own questions. Missed steps lead to wasted trips, rescheduled tests, and delayed care.
 
-*Evidence: founder experience + desk research ([interim findings](../02-discovery/findings.md)). Primary interviews pending.*
+*Evidence: founder experience + desk research + 3 early email interviews ([findings](../02-discovery/findings.md)). In Round 1, one participant named "knowing which documents to bring" as the most confusing part; two forgot an item or a question. Screened interviews pending.*
 
 ## 3. Objectives & success metrics
 
@@ -262,7 +262,7 @@ Format: *As a [user], I want [action], so that [benefit].* Acceptance criteria u
 |---|---|---|
 | 1 | Do most first-time patients have digital documents or paper? | Email interviews (Q5) |
 | 2 | Would patients upload documents at all? What builds trust? | Email interviews (Q9) |
-| 3 | Is the common-topics list right and complete? | Interviews + review of public clinic "what to bring" pages |
+| 3 | Is the common-topics list right and complete? | **Early support:** Round 1 participants needed ID, insurance card, previous reports, and a medication list, all already in the list. Continue checking in interviews |
 | 4 | Which LLM gives the best accuracy-to-cost ratio? | Stage 9 model comparison on the test set |
 | 5 | Is 30 seconds an acceptable wait? | Prototype testing |
 
@@ -278,3 +278,4 @@ Format: *As a [user], I want [action], so that [benefit].* Acceptance criteria u
 |---|---|---|
 | v0.1 | Oct 30, 2026 | First draft from interim findings and Stage 4 prioritization |
 | v0.1.1 | Oct 30, 2026 | Dependencies updated after Stage 8 architecture (pypdf) |
+| v0.2 | Oct 31, 2026 | Problem evidence updated with Round 1 interviews; open question 3 (topics list) has early support. **No scope changes**: Round 1 didn't test the riskiest assumptions |
