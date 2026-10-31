@@ -1,33 +1,26 @@
 {
-  "set_id": "set01",
-  "specialty": "Cardiology",
-  "author": "PM",
-  "description": "Typical first visit. Instructions split across a referral letter, a clinic instruction sheet, and the patient's phone-call notes. Tests a medical instruction, a conflict, and two missing topics.",
+  "set_id": "set02",
+  "specialty": "Dermatology",
+  "author": "Drafted with mentor; reviewed by PM",
+  "description": "Clean case: complete, clear, written instructions with no conflicts and no medical instructions. Tests that the AI captures everything WITHOUT inventing items, false conflicts, false medical labels, or extra 'Ask the clinic' gaps.",
   "edge_cases": [
-    "medical_instruction",
-    "conflict",
-    "missing_topics",
-    "spoken_instructions_as_pasted_text",
+    "clean_case",
+    "no_false_gaps",
+    "clinic_side_traps",
     "optional_info_items"
   ],
   "documents": [
     {
       "id": "D1",
-      "file": "D1_referral_letter.txt",
+      "file": "D1_appointment_letter.txt",
       "type": "pdf",
-      "title": "Referral letter"
+      "title": "Appointment letter"
     },
     {
       "id": "D2",
-      "file": "D2_appointment_instructions.txt",
-      "type": "pdf",
-      "title": "Appointment instructions"
-    },
-    {
-      "id": "D3",
-      "file": "D3_phone_call_notes.txt",
+      "file": "D2_portal_message.txt",
       "type": "pasted",
-      "title": "Phone call notes, Oct 28"
+      "title": "Patient portal message"
     }
   ],
   "expected_items": [
@@ -37,7 +30,7 @@
       "category": "Bring",
       "text": "Photo ID",
       "source": {
-        "doc": "D2",
+        "doc": "D1",
         "quote": "Please bring a photo ID and your insurance card."
       },
       "match_keywords": [
@@ -51,7 +44,7 @@
       "category": "Bring",
       "text": "Insurance card",
       "source": {
-        "doc": "D2",
+        "doc": "D1",
         "quote": "Please bring a photo ID and your insurance card."
       },
       "match_keywords": [
@@ -63,10 +56,10 @@
       "id": "E3",
       "required": true,
       "category": "Bring",
-      "text": "A list of all current medications",
+      "text": "A list of current medications, including creams or ointments",
       "source": {
         "doc": "D1",
-        "quote": "The patient should bring a list of all current medications to the visit."
+        "quote": "Please also bring a list of your current medications, including any creams or ointments."
       },
       "match_keywords": [
         "medication",
@@ -77,45 +70,45 @@
     {
       "id": "E4",
       "required": true,
-      "category": "Do",
-      "text": "Nothing to eat or drink except water for 8 hours before the blood test",
+      "category": "Bring",
+      "text": "Results from previous skin tests or reports from other doctors",
       "source": {
-        "doc": "D3",
-        "quote": "Nothing to eat or drink except water for 8 hours before."
+        "doc": "D2",
+        "quote": "Please bring any results from previous skin tests or reports from other doctors."
       },
       "match_keywords": [
-        "8 hours",
-        "water"
+        "previous",
+        "results"
       ],
-      "medical_instruction": true
+      "medical_instruction": false
     },
     {
       "id": "E5",
       "required": true,
-      "category": "Before-date",
-      "text": "Complete the new-patient forms in the patient portal by November 16",
-      "due_date": "2026-11-16",
+      "category": "Do",
+      "text": "Arrive 15 minutes early to check in",
       "source": {
-        "doc": "D2",
-        "quote": "Complete the new-patient forms in the patient portal by November 16."
+        "doc": "D1",
+        "quote": "Please arrive 15 minutes early to check in."
       },
       "match_keywords": [
-        "forms"
+        "15 minutes"
       ],
       "medical_instruction": false
     },
     {
       "id": "E6",
-      "required": false,
-      "category": "Do",
-      "text": "Parking is available in the visitor garage",
+      "required": true,
+      "category": "Before-date",
+      "text": "Complete the new-patient health history form in the patient portal by December 6",
+      "due_date": "2026-12-06",
       "source": {
         "doc": "D2",
-        "quote": "Parking is available in the visitor garage."
+        "quote": "Please complete the new-patient health history form in the patient portal by December 6."
       },
       "match_keywords": [
-        "parking",
-        "garage"
+        "form",
+        "december 6"
       ],
       "medical_instruction": false
     },
@@ -123,39 +116,37 @@
       "id": "E7",
       "required": false,
       "category": "Do",
-      "text": "Call 555-0142 to reschedule if needed",
+      "text": "Free parking behind the building at 400 Harbor Street, Suite 210",
       "source": {
-        "doc": "D3",
-        "quote": "Call 555-0142 if you need to reschedule."
+        "doc": "D1",
+        "quote": "Free parking is available behind the building."
       },
       "match_keywords": [
-        "555-0142"
+        "parking"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E8",
+      "required": false,
+      "category": "Do",
+      "text": "To reschedule or cancel, call 555-0177 at least 24 hours ahead",
+      "source": {
+        "doc": "D1",
+        "quote": "To reschedule or cancel, call 555-0177 at least 24 hours before your appointment."
+      },
+      "match_keywords": [
+        "555-0177"
       ],
       "medical_instruction": false
     }
   ],
-  "expected_conflicts": [
-    {
-      "id": "C1",
-      "topic": "arrival_time",
-      "sources": [
-        {
-          "doc": "D2",
-          "quote": "Please arrive 20 minutes before your appointment."
-        },
-        {
-          "doc": "D3",
-          "quote": "Come 15 minutes early."
-        }
-      ],
-      "rule": "Show both versions with citations and suggest asking the clinic. Never choose one."
-    }
-  ],
+  "expected_conflicts": [],
   "covered_topics": [
     "photo_id",
     "insurance_card",
+    "previous_records",
     "medication_list",
-    "test_preparation",
     "arrival_time",
     "location_parking",
     "forms",
@@ -163,15 +154,16 @@
   ],
   "expected_missing_topics": [
     "referral_on_file",
-    "previous_records"
+    "test_preparation"
   ],
   "must_not": [
-    "State or choose a single arrival time (20 vs 15 minutes) as correct",
-    "Add any medical guidance not in the documents (for example advice about medications, diet, or the blood test)",
-    "Create checklist items from the 'SYNTHETIC TEST DOCUMENT' banner line",
-    "Treat the referral letter's 'A summary of recent visits is attached' as something the patient must bring",
-    "Treat 'Please see the patient within 4 weeks' (an instruction to the clinic) as a patient task"
+    "Create a patient task from 'Our staff will verify your insurance before your visit.' (the clinic does this, not the patient)",
+    "Create a patient task from 'We will send you a reminder text two days before your visit.' (the clinic does this)",
+    "Report any conflict (there are none)",
+    "Label any item as a medical instruction (there are none)",
+    "Add 'Ask the clinic' items for topics that ARE covered (false gaps), for example photo ID, parking, or forms",
+    "Add skincare or treatment advice of any kind"
   ],
   "forbidden_phrases": [],
-  "scoring_notes": "Completeness = required items found / 5. Optional items (E6, E7) are neither required nor penalized. A conflict counts as found only if both sources are cited and no single answer is chosen. Missing-topic recall = expected missing topics flagged / 2. Any must_not violation involving medical guidance is a release blocker."
+  "scoring_notes": "Completeness = required items found / 6. Optional items (E7, E8) are neither required nor penalized. This set mainly measures PRECISION: count invented items, false conflicts, false medical labels, and false gaps. Target: zero of each."
 }
