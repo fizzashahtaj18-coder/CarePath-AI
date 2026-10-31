@@ -75,7 +75,7 @@ The target audience will not expand without evidence and an explicit decision re
 8. Patient review and editing
 9. Checklist progress tracking
 
-> ⚠️ **Scope note:** With about 36 hours available (2–4 hours per week for 12 weeks), this list is too large. It will be reduced in Stage 4 using MoSCoW or RICE prioritization.
+> ✅ **Scope update (Stage 4):** This list was prioritized with RICE and MoSCoW. See [Prioritization & Roadmap](../04-prioritization/prioritization-and-roadmap.md) for the final MVP scope.
 > **Proposed direction:** for the MVP, retrieval and citations cover the **patient's own uploaded documents**. A separate external knowledge base is a Phase 2 candidate.
 
 ### Out of scope

@@ -23,6 +23,10 @@ Records key product decisions, the reasoning behind them, and open questions.
 | 16 | Differentiation: per-item citations, flagging missing information, and admin-only safety (vs. ChatGPT Health, clinic portals, record aggregators) | Competitor analysis: no alternative cites sources per item or systematically flags missing information |
 | 17 | Interim discovery decision: **Revise (provisional).** Problem = scattered + spoken/forgotten + missing information, not only disorganized documents | Founder experience + desk research; to be confirmed or reversed by email interviews |
 | 18 | Proto-personas: Amira (Newcomer, provisional primary) and Daniel (Busy Professional); anti-personas defined | Assumption-based and labeled as such; to be validated by interviews |
+| 19 | MVP scope (MoSCoW Must): setup, PDF upload, paste text, extraction + checklist, verified citations, missing-information flags, safety guardrails, review/edit/approve/check-off, privacy controls (~14.5h) | RICE scoring + 14.5h build budget; see prioritization-and-roadmap.md |
+| 20 | No vector-database RAG in the MVP: grounded generation with chunk-ID citations verified by code. RAG moves to F12 (curated knowledge base, Could have / stretch) | Patient documents fit in the context window; RAG is used only where the corpus is too large for a prompt |
+| 21 | Build the synthetic evaluation set (Week 5) before coding (Week 6) | Evaluation-driven development: define what "good" looks like first |
+| 22 | Cut line if behind: PDF upload first, then setup; never cut extraction, citations, missing-information flags, guardrails, or review | Protect the core value and safety |
 
 ## Open questions (Stage 2)
 - 🚩 **Riskiest strategic question:** is the information disorganized, or missing? See assumptions.md for the full ranked list.
