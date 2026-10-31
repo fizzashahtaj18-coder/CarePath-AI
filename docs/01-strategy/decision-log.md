@@ -30,6 +30,8 @@ Records key product decisions, the reasoning behind them, and open questions.
 | 23 | Session-only data: no database storage of documents by default; "Delete everything" button; export instead of accounts | Trust is the biggest adoption risk; less data to secure |
 | 24 | The missing-information topic list is a fixed, PM-reviewed configuration file, not AI-generated | Keeps gap detection predictable, testable, and administration-only |
 | 25 | The AI never chooses between conflicting instructions; it shows both with citations | Avoids silent errors on safety-relevant details |
+| 26 | One-week sprints (Sprint 0–5, Weeks 5–10); 56 story points; Sprint 0 builds the evaluation set first | Matches the roadmap; evaluation-driven development |
+| 27 | AI-specific Definition of Done: every AI story re-runs the evaluation and must not lower scores | AI output can get worse without any code error |
 
 ## Open questions (Stage 2)
 - 🚩 **Riskiest strategic question:** is the information disorganized, or missing? See assumptions.md for the full ranked list.
