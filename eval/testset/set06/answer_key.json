@@ -132,5 +132,9 @@
     "Explain what fasting means or how long to fast (not stated in the documents)",
     "Give advice about blood sugar or diabetes"
   ],
+  "forbidden_phrases": [
+    "january 12 is correct",
+    "january 14 is correct"
+  ],
   "scoring_notes": "Completeness = required found / 5. The conflict counts as found only if both dates are cited and none is chosen. E1 must keep the medical label."
 }
