@@ -21,6 +21,8 @@ Records key product decisions, the reasoning behind them, and open questions.
 | 14 | GitHub topics describe a workflow, not agents (`workflow-automation`, not `llm-agents`) | Never claim more than the product does |
 | 15 | Stage 2 method: email interviews (5–8 participants) + desk research | Fits the founder's schedule; written answers are weaker than live interviews, so each participant gets one follow-up |
 | 16 | Differentiation: per-item citations, flagging missing information, and admin-only safety (vs. ChatGPT Health, clinic portals, record aggregators) | Competitor analysis: no alternative cites sources per item or systematically flags missing information |
+| 17 | Interim discovery decision: **Revise (provisional).** Problem = scattered + spoken/forgotten + missing information, not only disorganized documents | Founder experience + desk research; to be confirmed or reversed by email interviews |
+| 18 | Proto-personas: Amira (Newcomer, provisional primary) and Daniel (Busy Professional); anti-personas defined | Assumption-based and labeled as such; to be validated by interviews |
 
 ## Open questions (Stage 2)
 - 🚩 **Riskiest strategic question:** is the information disorganized, or missing? See assumptions.md for the full ranked list.
@@ -31,6 +33,7 @@ Records key product decisions, the reasoning behind them, and open questions.
 - Do after-visit tasks (for example, dropping off a sample) cause similar problems?
 
 ## Candidate features (evaluate in Stage 4)
+- Quick capture of spoken instructions (for example, typing a note right after the clinic's call)
 - Question preparation for the doctor (competitors: AHRQ QuestionBuilder, ChatGPT)
 - "Flag missing information": moving toward core value (competitor analysis)
 - Photo upload for paper documents (desk research: not all patients use portals)
