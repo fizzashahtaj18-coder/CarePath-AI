@@ -4,7 +4,7 @@
 
 CarePath AI is an AI Product Management portfolio project. It is a web application concept that turns scattered appointment documents and instructions into one editable preparation checklist, with a source citation for every item.
 
-🚧 **Project status:** Sprint 1 code ready: paste instructions → draft checklist with sources (Claude Haiku 5.5) · Next: deploy and run the first real evaluation · user research continuing.
+🚧 **Project status:** Live prototype ✅ · First real evaluation **passed** (Claude Haiku 5.5, no medical advice, prompt injection ignored) · Prompt v2 fixes 2 issues found in human review · user research continuing.
 
 ---
 
