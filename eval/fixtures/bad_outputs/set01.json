@@ -1,0 +1,78 @@
+{
+  "set_id": "set01",
+  "outcome": "checklist",
+  "document_errors": [],
+  "items": [
+    {
+      "text": "Photo ID",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Please bring a photo ID and your insurance card."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Insurance card",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Please bring a photo ID and your insurance card."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Nothing to eat or drink except water for 8 hours before your blood test",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D3",
+          "quote": "Nothing to eat or drink except water for 8 hours before."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Arrive 15 minutes early",
+      "category": "Do",
+      "citations": [
+        {
+          "doc": "D3",
+          "quote": "Come 15 minutes early."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Complete the new-patient forms by November 16",
+      "category": "Before-date",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Complete the new-patient forms in the patient portal by November 16."
+        }
+      ],
+      "medical_instruction": false
+    },
+    {
+      "text": "Bring your passport",
+      "category": "Bring",
+      "citations": [
+        {
+          "doc": "D2",
+          "quote": "Please bring your passport."
+        }
+      ],
+      "medical_instruction": false
+    }
+  ],
+  "conflicts": [],
+  "missing_topics": [
+    "referral_on_file",
+    "photo_id"
+  ]
+}
