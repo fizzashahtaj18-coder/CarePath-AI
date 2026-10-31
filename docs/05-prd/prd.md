@@ -232,7 +232,7 @@ Format: *As a [user], I want [action], so that [benefit].* Acceptance criteria u
 | Dependency | Purpose | Decided in |
 |---|---|---|
 | LLM provider API | Extraction + checklist generation | Stage 8 |
-| PDF text-extraction library (for example PyMuPDF) | Read PDFs | Stage 8 |
+| PDF text-extraction library: **pypdf** (BSD license; PyMuPDF rejected because of AGPL) | Read PDFs | Stage 8 ✅ |
 | Web framework (for example Streamlit) | User interface | Stage 8 |
 | Synthetic test documents with known correct checklists | Evaluation | Week 5 (before build) |
 | Common administrative topics list | Missing-information flags | Stage 9; reviewed by PM |
@@ -277,3 +277,4 @@ Format: *As a [user], I want [action], so that [benefit].* Acceptance criteria u
 | Version | Date | Change |
 |---|---|---|
 | v0.1 | Oct 30, 2026 | First draft from interim findings and Stage 4 prioritization |
+| v0.1.1 | Oct 30, 2026 | Dependencies updated after Stage 8 architecture (pypdf) |
