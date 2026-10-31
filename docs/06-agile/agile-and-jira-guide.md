@@ -2,7 +2,7 @@
 
 **Stage:** 6, Agile & Jira
 **Source:** [PRD v0.1](../05-prd/prd.md) · [Prioritization & Roadmap](../04-prioritization/prioritization-and-roadmap.md)
-**Import file:** [carepath-jira-import.csv](carepath-jira-import.csv) (8 epics, 15 stories, 21 sub-tasks)
+**Import file:** [carepath-jira-import.csv](carepath-jira-import.csv) (8 epics, 15 stories, 21 subtasks)
 
 ---
 
@@ -11,14 +11,14 @@
 ```
 Epic (a large goal, from the PRD)          e.g. E3: Citations & trust
  └── Story (user value, fits in one sprint)  e.g. US-4: See and verify where each item came from
-      └── Sub-task (a piece of work, hours)  e.g. Write deterministic quote-verification function
+      └── Subtask (a piece of work, hours)  e.g. Write deterministic quote-verification function
 ```
 
 | Level | Who writes it | Contains |
 |---|---|---|
 | **Epic** | PM | Goal + linked PRD requirements |
 | **Story** | PM (with team input) | User story + acceptance criteria + story points |
-| **Sub-task** | Engineers (here: you, with AI coding help) | Concrete technical steps |
+| **Subtask** | Engineers (here: you, with AI coding help) | Concrete technical steps |
 
 **Story points** use the Fibonacci scale (1, 2, 3, 5, 8). They measure **relative size and uncertainty**, not hours. US-3 (generate checklist, 8 points) is the biggest and riskiest story because it holds the core AI behavior.
 
