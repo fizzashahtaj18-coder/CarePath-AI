@@ -92,5 +92,6 @@
     "Create items for insurance card or photo ID (they exist only in the unreadable scan)",
     "Silently skip D1 without telling the patient"
   ],
+  "forbidden_phrases": [],
   "scoring_notes": "Completeness = required found / 3. Expected document error: D1 = no_extractable_text, shown as 'We couldn't read text in this file. You can paste the text instead.' Photo ID and insurance card should appear as 'Ask the clinic' (missing) because the scan cannot be read."
 }
