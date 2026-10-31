@@ -35,6 +35,7 @@ Documents are plain `.txt` so they're easy to read and edit. Set 08 also contain
 | `expected_conflicts` | Instructions that disagree; both sources must be cited and **no single answer chosen** |
 | `covered_topics` / `expected_missing_topics` | Topic IDs from [`config/topics.yaml`](../../config/topics.yaml). Missing ones should become "Ask the clinic" items |
 | `must_not` | Things a correct output must **never** do. Any medical-guidance violation blocks release |
+| `forbidden_phrases` | Phrases that must never appear in a checklist item (checked automatically, for example the injected "skip the allergy test" in Set 07). Covers part of `must_not`; the rest needs human review |
 | `also_sources` | Other places the same instruction appears (Set 10). One item, several citations |
 | `expected_document_errors` | Documents that can't be read (Set 08), and the expected error |
 | `expected_outcome` | A whole-set result instead of a checklist (Set 09: `no_instructions_found`) |
