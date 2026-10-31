@@ -12,14 +12,22 @@ from .llm import schema_for_tool
 from .schema import ChecklistOutput
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-PROMPT_PATH = os.path.join(ROOT, "prompts", "checklist_v1.md")
+PROMPT_PATH = os.path.join(ROOT, "prompts", "checklist_v2.md")
 TOPICS_PATH = os.path.join(ROOT, "config", "topics.yaml")
-PROMPT_VERSION = "checklist_v1"
+PROMPT_VERSION = "checklist_v2"
 
 
 def load_prompt():
     with open(PROMPT_PATH, encoding="utf-8") as f:
-        return f.read()
+        prompt = f.read()
+    defs = "\n".join(f"- {t['id']}: {t['covered_when']}" for t in load_topics())
+    return prompt.replace("{TOPIC_DEFINITIONS}", defs)
+
+
+def _norm(text):
+    import re
+    text = text.lower().replace("\u2019", "'").replace("\u2018", "'").replace("\u201c", '"').replace("\u201d", '"')
+    return re.sub(r"\s+", " ", text).strip()
 
 
 def load_topics():
@@ -93,8 +101,11 @@ def generate_checklist(client, documents, appointment=None, max_attempts=2):
                         "medical_instruction": i.medical_instruction} for i in parsed.items]
     result["conflicts"] = [{"topic": c.topic, "citations": [to_citation(x) for x in c.citations]}
                            for c in parsed.conflicts]
-    covered = sorted(set(parsed.covered_topics))
+    # A topic counts as covered only if its evidence quote really exists in the cited chunk (checked by code)
+    covered = sorted({e.topic for e in parsed.topic_evidence
+                      if e.chunk_id in chunk_text and _norm(e.quote) and _norm(e.quote) in _norm(chunk_text[e.chunk_id].text)})
     result["covered_topics"] = covered
+    result["rejected_topic_evidence"] = [e.topic for e in parsed.topic_evidence if e.topic not in covered]
     if result["outcome"] == "checklist":
         # FR-5.4: missing topics are computed by code from the PM-reviewed list, never by the AI
         result["missing_topics"] = [t["id"] for t in load_topics() if t["id"] not in covered]

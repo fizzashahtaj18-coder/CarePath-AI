@@ -29,8 +29,14 @@ class Conflict(BaseModel):
     citations: List[Citation] = Field(min_length=2, description="Every disagreeing version, one citation each")
 
 
+class TopicEvidence(BaseModel):
+    topic: TOPIC_IDS
+    chunk_id: str = Field(description="The chunk that shows this topic is covered")
+    quote: str = Field(description="The exact words from that chunk")
+
+
 class ChecklistOutput(BaseModel):
     no_instructions_found: bool = Field(description="True if the documents contain no appointment preparation instructions for the patient")
     items: List[Item] = Field(default_factory=list)
     conflicts: List[Conflict] = Field(default_factory=list)
-    covered_topics: List[TOPIC_IDS] = Field(default_factory=list, description="Topics the documents DO mention (see the topic list)")
+    topic_evidence: List[TopicEvidence] = Field(default_factory=list, description="One entry per topic the documents cover, with the exact evidence. Leave a topic out if unsure.")
