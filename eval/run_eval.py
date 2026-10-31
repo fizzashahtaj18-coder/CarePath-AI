@@ -196,26 +196,24 @@ def pct(a, b):
     return "n/a" if b == 0 else f"{100 * a / b:.0f}%"
 
 
-def main():
-    ap = argparse.ArgumentParser(description="Score CarePath AI outputs against the test set.")
-    ap.add_argument("--outputs", required=True, help="folder with set01.json ... set10.json")
-    ap.add_argument("--name", default=None, help="name for this run (default: folder name)")
-    args = ap.parse_args()
-    run_name = args.name or os.path.basename(os.path.normpath(args.outputs))
-
-    rows = []
+def load_testset():
+    """Return {set_id: (answer_key, {doc_id: normalized_text})}."""
+    data = {}
     for set_id in sorted(d for d in os.listdir(TESTSET) if d.startswith("set")):
         key = json.load(open(os.path.join(TESTSET, set_id, "answer_key.json"), encoding="utf-8"))
         docs_norm = {d["id"]: norm(read_doc(os.path.join(TESTSET, set_id, d["file"]))) for d in key["documents"]}
-        out_path = os.path.join(args.outputs, f"{set_id}.json")
-        if not os.path.exists(out_path):
-            print(f"[skip] {set_id}: no output file")
-            continue
-        output = json.load(open(out_path, encoding="utf-8"))
-        rows.append(score_set(key, output, docs_norm))
+        data[set_id] = (key, docs_norm)
+    return data
 
+
+def evaluate(outputs, run_name="run"):
+    """outputs: {set_id: output_dict}. Returns (summary, rows, markdown_report)."""
+    rows = []
+    for set_id, (key, docs_norm) in load_testset().items():
+        if set_id in outputs:
+            rows.append(score_set(key, outputs[set_id], docs_norm))
     if not rows:
-        sys.exit("No outputs found.")
+        raise ValueError("No outputs to score.")
 
     tot = lambda k: sum(r[k] for r in rows)
     comp = tot("required_found") / max(1, tot("required_total"))
@@ -265,10 +263,35 @@ def main():
         lines += [f"- [ ] {m}" for m in r["must_not"]]
         lines.append("")
 
+    summary = {name: {"value": val, "target": target, "pass": val >= target} for name, (val, target, _, _) in checks.items()}
+    summary["Medical advice flags"] = {"value": adv, "target": 0, "pass": adv == 0}
+    summary["overall_pass"] = all_pass
+    return summary, rows, "\n".join(lines) + "\n"
+
+
+def main():
+    ap = argparse.ArgumentParser(description="Score CarePath AI outputs against the test set.")
+    ap.add_argument("--outputs", required=True, help="folder with set01.json ... set10.json")
+    ap.add_argument("--name", default=None, help="name for this run (default: folder name)")
+    args = ap.parse_args()
+    run_name = args.name or os.path.basename(os.path.normpath(args.outputs))
+
+    outputs = {}
+    for set_id in sorted(d for d in os.listdir(TESTSET) if d.startswith("set")):
+        path = os.path.join(args.outputs, f"{set_id}.json")
+        if os.path.exists(path):
+            outputs[set_id] = json.load(open(path, encoding="utf-8"))
+        else:
+            print(f"[skip] {set_id}: no output file")
+    try:
+        summary, rows, md = evaluate(outputs, run_name)
+    except ValueError as e:
+        sys.exit(str(e))
+
     os.makedirs(RESULTS, exist_ok=True)
     md_path = os.path.join(RESULTS, f"{run_name}.md")
     with open(md_path, "w", encoding="utf-8") as f:
-        f.write("\n".join(lines) + "\n")
+        f.write(md)
     with open(os.path.join(RESULTS, f"{run_name}.csv"), "w", newline="", encoding="utf-8") as f:
         fields = [k for k in rows[0] if k not in ("notes", "must_not")]
         w = csv.DictWriter(f, fieldnames=fields)
@@ -276,9 +299,13 @@ def main():
         for r in rows:
             w.writerow({k: r[k] for k in fields})
 
-    for name, (val, target, shown, tshown) in checks.items():
-        print(f"{name:26} {shown:>6}  target {tshown}  {'PASS' if val >= target else 'FAIL'}")
-    print(f"{'Medical advice flags':26} {adv:>6}  target 0      {'PASS' if adv == 0 else 'FAIL'}")
+    for name, m in summary.items():
+        if name == "overall_pass":
+            continue
+        if name == "Medical advice flags":
+            print(f"{name:26} {m['value']:>6}  target 0      {'PASS' if m['pass'] else 'FAIL'}")
+        else:
+            print(f"{name:26} {m['value']:>6.0%}  target ≥ {m['target']:.0%}  {'PASS' if m['pass'] else 'FAIL'}")
     print(f"\nReport: {md_path}")
 
 
