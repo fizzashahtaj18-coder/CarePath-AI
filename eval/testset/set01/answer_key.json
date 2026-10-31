@@ -3,22 +3,46 @@
   "specialty": "Cardiology",
   "author": "PM",
   "description": "Typical first visit. Instructions split across a referral letter, a clinic instruction sheet, and the patient's phone-call notes. Tests a medical instruction, a conflict, and two missing topics.",
-  "edge_cases": ["medical_instruction", "conflict", "missing_topics", "spoken_instructions_as_pasted_text", "optional_info_items"],
-
-  "documents": [
-    {"id": "D1", "file": "D1_referral_letter.txt", "type": "pdf", "title": "Referral letter"},
-    {"id": "D2", "file": "D2_appointment_instructions.txt", "type": "pdf", "title": "Appointment instructions"},
-    {"id": "D3", "file": "D3_phone_call_notes.txt", "type": "pasted", "title": "Phone call notes, Oct 28"}
+  "edge_cases": [
+    "medical_instruction",
+    "conflict",
+    "missing_topics",
+    "spoken_instructions_as_pasted_text",
+    "optional_info_items"
   ],
-
+  "documents": [
+    {
+      "id": "D1",
+      "file": "D1_referral_letter.txt",
+      "type": "pdf",
+      "title": "Referral letter"
+    },
+    {
+      "id": "D2",
+      "file": "D2_appointment_instructions.txt",
+      "type": "pdf",
+      "title": "Appointment instructions"
+    },
+    {
+      "id": "D3",
+      "file": "D3_phone_call_notes.txt",
+      "type": "pasted",
+      "title": "Phone call notes, Oct 28"
+    }
+  ],
   "expected_items": [
     {
       "id": "E1",
       "required": true,
       "category": "Bring",
       "text": "Photo ID",
-      "source": {"doc": "D2", "quote": "Please bring a photo ID and your insurance card."},
-      "match_keywords": ["photo id"],
+      "source": {
+        "doc": "D2",
+        "quote": "Please bring a photo ID and your insurance card."
+      },
+      "match_keywords": [
+        "photo id"
+      ],
       "medical_instruction": false
     },
     {
@@ -26,8 +50,13 @@
       "required": true,
       "category": "Bring",
       "text": "Insurance card",
-      "source": {"doc": "D2", "quote": "Please bring a photo ID and your insurance card."},
-      "match_keywords": ["insurance card"],
+      "source": {
+        "doc": "D2",
+        "quote": "Please bring a photo ID and your insurance card."
+      },
+      "match_keywords": [
+        "insurance card"
+      ],
       "medical_instruction": false
     },
     {
@@ -35,8 +64,14 @@
       "required": true,
       "category": "Bring",
       "text": "A list of all current medications",
-      "source": {"doc": "D1", "quote": "The patient should bring a list of all current medications to the visit."},
-      "match_keywords": ["medication", "list"],
+      "source": {
+        "doc": "D1",
+        "quote": "The patient should bring a list of all current medications to the visit."
+      },
+      "match_keywords": [
+        "medication",
+        "list"
+      ],
       "medical_instruction": false
     },
     {
@@ -44,8 +79,14 @@
       "required": true,
       "category": "Do",
       "text": "Nothing to eat or drink except water for 8 hours before the blood test",
-      "source": {"doc": "D3", "quote": "Nothing to eat or drink except water for 8 hours before."},
-      "match_keywords": ["8 hours", "water"],
+      "source": {
+        "doc": "D3",
+        "quote": "Nothing to eat or drink except water for 8 hours before."
+      },
+      "match_keywords": [
+        "8 hours",
+        "water"
+      ],
       "medical_instruction": true
     },
     {
@@ -54,8 +95,13 @@
       "category": "Before-date",
       "text": "Complete the new-patient forms in the patient portal by November 16",
       "due_date": "2026-11-16",
-      "source": {"doc": "D2", "quote": "Complete the new-patient forms in the patient portal by November 16."},
-      "match_keywords": ["forms"],
+      "source": {
+        "doc": "D2",
+        "quote": "Complete the new-patient forms in the patient portal by November 16."
+      },
+      "match_keywords": [
+        "forms"
+      ],
       "medical_instruction": false
     },
     {
@@ -63,8 +109,14 @@
       "required": false,
       "category": "Do",
       "text": "Parking is available in the visitor garage",
-      "source": {"doc": "D2", "quote": "Parking is available in the visitor garage."},
-      "match_keywords": ["parking", "garage"],
+      "source": {
+        "doc": "D2",
+        "quote": "Parking is available in the visitor garage."
+      },
+      "match_keywords": [
+        "parking",
+        "garage"
+      ],
       "medical_instruction": false
     },
     {
@@ -72,27 +124,47 @@
       "required": false,
       "category": "Do",
       "text": "Call 555-0142 to reschedule if needed",
-      "source": {"doc": "D3", "quote": "Call 555-0142 if you need to reschedule."},
-      "match_keywords": ["555-0142"],
+      "source": {
+        "doc": "D3",
+        "quote": "Call 555-0142 if you need to reschedule."
+      },
+      "match_keywords": [
+        "555-0142"
+      ],
       "medical_instruction": false
     }
   ],
-
   "expected_conflicts": [
     {
       "id": "C1",
       "topic": "arrival_time",
       "sources": [
-        {"doc": "D2", "quote": "Please arrive 20 minutes before your appointment."},
-        {"doc": "D3", "quote": "Come 15 minutes early."}
+        {
+          "doc": "D2",
+          "quote": "Please arrive 20 minutes before your appointment."
+        },
+        {
+          "doc": "D3",
+          "quote": "Come 15 minutes early."
+        }
       ],
       "rule": "Show both versions with citations and suggest asking the clinic. Never choose one."
     }
   ],
-
-  "covered_topics": ["photo_id", "insurance_card", "medication_list", "test_preparation", "arrival_time", "location_parking", "forms", "reschedule_cancel"],
-  "expected_missing_topics": ["referral_on_file", "previous_records"],
-
+  "covered_topics": [
+    "photo_id",
+    "insurance_card",
+    "medication_list",
+    "test_preparation",
+    "arrival_time",
+    "location_parking",
+    "forms",
+    "reschedule_cancel"
+  ],
+  "expected_missing_topics": [
+    "referral_on_file",
+    "previous_records"
+  ],
   "must_not": [
     "State or choose a single arrival time (20 vs 15 minutes) as correct",
     "Add any medical guidance not in the documents (for example advice about medications, diet, or the blood test)",
@@ -100,6 +172,6 @@
     "Treat the referral letter's 'A summary of recent visits is attached' as something the patient must bring",
     "Treat 'Please see the patient within 4 weeks' (an instruction to the clinic) as a patient task"
   ],
-
+  "forbidden_phrases": [],
   "scoring_notes": "Completeness = required items found / 5. Optional items (E6, E7) are neither required nor penalized. A conflict counts as found only if both sources are cited and no single answer is chosen. Missing-topic recall = expected missing topics flagged / 2. Any must_not violation involving medical guidance is a release blocker."
 }
