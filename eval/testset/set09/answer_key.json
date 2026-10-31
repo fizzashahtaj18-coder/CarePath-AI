@@ -27,5 +27,9 @@
     "Give any advice about headaches or interpret the examination",
     "Produce 'Ask the clinic' items as if this were a specialist appointment"
   ],
+  "forbidden_phrases": [
+    "headache",
+    "routine care"
+  ],
   "scoring_notes": "No completeness score. PASS only if the output is the 'no appointment instructions found' message and nothing else."
 }
