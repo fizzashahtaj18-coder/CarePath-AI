@@ -47,8 +47,13 @@ def perfect_fake_answer(key, docs):
                    "citations": [cite(e["source"])] + [cite(a) for a in e.get("also_sources", [])],
                    "medical_instruction": e["medical_instruction"]} for e in key["expected_items"]],
         "conflicts": [{"topic": c["topic"], "citations": [cite(s) for s in c["sources"]]} for c in key["expected_conflicts"]],
-        "covered_topics": key["covered_topics"],
+        "topic_evidence": [{"topic": t, "chunk_id": any_chunk(cbd).chunk_id, "quote": any_chunk(cbd).text}
+                           for t in key["covered_topics"]],
     }
+
+
+def any_chunk(cbd):
+    return next(c for cs in cbd.values() for c in cs)
 
 
 def test_every_quote_fits_in_one_chunk():
@@ -108,6 +113,20 @@ def test_missing_topics_computed_by_code_not_ai():
     answer = perfect_fake_answer(key, docs)
     out = generate_checklist(FakeClient([answer]), docs)
     assert sorted(out["missing_topics"]) == sorted(key["expected_missing_topics"])
+
+
+def test_topic_without_real_evidence_becomes_missing():
+    key, docs = load_set("set01")
+    answer = perfect_fake_answer(key, docs)
+    answer["topic_evidence"].append({"topic": "referral_on_file", "chunk_id": "D1-C1", "quote": "The referral is on file."})
+    out = generate_checklist(FakeClient([answer]), docs)
+    assert "referral_on_file" in out["missing_topics"] and "referral_on_file" in out["rejected_topic_evidence"]
+
+
+def test_prompt_contains_topic_definitions():
+    from pipeline.checklist import load_prompt
+    p = load_prompt()
+    assert "{TOPIC_DEFINITIONS}" not in p and "A referral letter existing does NOT count" in p.replace("\n", " ").replace("  ", " ")
 
 
 if __name__ == "__main__":
