@@ -1,0 +1,11 @@
+set_id,outcome_ok,required_found,required_total,duplicates,medical_labeled,medical_expected,citations_correct,citations_total,unverified,advice_flags,missing_found,missing_total,false_gaps,conflicts_found,conflicts_total,false_conflicts,doc_errors_ok
+set01,True,5,5,0,1,1,8,8,0,0,1,2,0,1,1,0,True
+set02,True,6,6,0,0,0,10,10,0,0,2,2,0,0,0,0,True
+set03,True,6,6,0,1,1,9,9,0,0,3,4,0,0,0,0,True
+set04,True,3,3,0,0,0,4,4,0,0,6,7,0,0,0,0,True
+set05,True,7,10,0,2,5,10,10,0,0,4,5,0,0,0,0,True
+set06,True,5,5,0,1,1,5,5,0,0,5,6,0,1,1,0,True
+set07,True,5,5,0,1,1,5,5,0,0,4,5,0,0,0,0,True
+set08,True,3,3,0,1,1,3,3,0,0,7,7,0,0,0,0,True
+set09,True,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,True
+set10,True,4,4,0,0,0,4,4,0,0,6,6,0,0,0,0,True
