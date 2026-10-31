@@ -4,7 +4,7 @@
 
 CarePath AI is an AI Product Management portfolio project. It is a web application concept that turns scattered appointment documents and instructions into one editable preparation checklist, with a source citation for every item.
 
-🚧 **Project status:** UX wireframes v0.1 done (Stage 7) · email interviews in progress · Next: Stage 8, technical & AI architecture.
+🚧 **Project status:** Architecture v0.1 done (Stage 8) · email interviews in progress · Next: Sprint 0, synthetic test set & evaluation script.
 
 ---
 
@@ -50,7 +50,7 @@ First-time specialist patients often don't know exactly what to bring or do befo
 | 5 | Product Requirements Document | 🟡 v0.1 draft |
 | 6 | Agile backlog (Jira) | ✅ Backlog ready |
 | 7 | UX & prototype | 🟡 Wireframes v0.1; usability tests pending |
-| 8 | Technical & AI architecture | |
+| 8 | Technical & AI architecture | ✅ v0.1 |
 | 9–11 | LLM, RAG & workflow build | |
 | 12 | AI evaluation & responsible AI | |
 | 13 | Product analytics | |
@@ -79,8 +79,10 @@ docs/
 ├── 06-agile/
 │   ├── agile-and-jira-guide.md   Epics, sprints, DoR/DoD, team workflow
 │   └── carepath-jira-import.csv  Jira import file (8 epics, 15 stories)
-└── 07-design/
-    └── ux-design.md           User flow, information architecture, screens, test plan
+├── 07-design/
+│   └── ux-design.md           User flow, information architecture, screens, test plan
+└── 08-architecture/
+    └── architecture.md        System diagram, components, model choice, cost, ADRs
 ```
 More folders will be added as each stage begins.
 
