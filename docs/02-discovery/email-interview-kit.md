@@ -63,6 +63,8 @@ Don't include:
 
 Pick **one or two** questions based on their answers. Always ask about something they actually said.
 
+**If the participant answered an earlier, shorter question set, also add the missing screening and risk questions:** first visit with this specialist? US-based? instructions written or spoken? documents paper or digital? comfortable uploading, and why or why not? consent to quote?
+
 > Hi [Name], thank you so much for your answers! Just one quick follow-up:
 >
 > - You mentioned **[their words]**. Can you tell me a bit more about what happened next?
@@ -89,9 +91,9 @@ Keep the real names **privately**, outside GitHub. Only participant IDs go in th
 
 | ID | Date sent | Replied? | Consent to quote? | Follow-up sent? | Follow-up replied? |
 |---|---|---|---|---|---|
-| P1 | | | | | |
-| P2 | | | | | |
-| P3 | | | | | |
+| P1 | Oct 2026 (Round 1, 7-question version) | ✅ | ⏳ Asked in follow-up | ⏳ | |
+| P2 | Oct 2026 (Round 1, 7-question version) | ✅ | ⏳ Asked in follow-up | ⏳ | |
+| P3 | Oct 2026 (Round 1, 7-question version) | ✅ | ⏳ Asked in follow-up | ⏳ | |
 | P4 | | | | | |
 | P5 | | | | | |
 | P6 | | | | | |
