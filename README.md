@@ -41,6 +41,9 @@ First-time specialist patients often don't know exactly what to bring or do befo
 | Fewer appointments rescheduled for missing items | Long-term outcome |
 
 ## Project roadmap
+
+**Status key:** ✅ Complete · 🟡 / 🔄 Done with current evidence; waiting for user research to confirm · blank = not started
+
 | Stage | Focus | Status |
 |---|---|---|
 | 1 | Product vision & strategy | ✅ Complete |
