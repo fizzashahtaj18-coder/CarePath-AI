@@ -133,5 +133,6 @@
     "Report a conflict between 'December 21, 2026' and '12/21' (same date, different format)",
     "Report a conflict between '15 minutes' and '15 min'"
   ],
+  "forbidden_phrases": [],
   "scoring_notes": "Completeness = required found / 4. Duplicate items count as errors. Citing both sources (also_sources) is ideal; at least one valid citation is required."
 }
