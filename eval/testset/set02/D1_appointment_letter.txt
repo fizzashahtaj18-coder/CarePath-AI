@@ -1,0 +1,20 @@
+SYNTHETIC TEST DOCUMENT. NOT A REAL PATIENT.
+
+Riverside Dermatology (example)
+New Patient Appointment Letter
+
+Dear patient,
+
+Your new-patient appointment is on Tuesday, December 8, 2026 at 2:15 PM.
+
+Please arrive 15 minutes early to check in.
+
+Please bring a photo ID and your insurance card.
+
+Please also bring a list of your current medications, including any creams or ointments.
+
+The clinic is at 400 Harbor Street, Suite 210 (example). Free parking is available behind the building.
+
+To reschedule or cancel, call 555-0177 at least 24 hours before your appointment.
+
+Our staff will verify your insurance before your visit.

@@ -1,0 +1,104 @@
+{
+  "set_id": "set02",
+  "specialty": "Dermatology",
+  "author": "Drafted with mentor; reviewed by PM",
+  "description": "Clean case: complete, clear, written instructions with no conflicts and no medical instructions. Tests that the AI captures everything WITHOUT inventing items, false conflicts, false medical labels, or extra 'Ask the clinic' gaps.",
+  "edge_cases": ["clean_case", "no_false_gaps", "clinic_side_traps", "optional_info_items"],
+
+  "documents": [
+    {"id": "D1", "file": "D1_appointment_letter.txt", "type": "pdf", "title": "Appointment letter"},
+    {"id": "D2", "file": "D2_portal_message.txt", "type": "pasted", "title": "Patient portal message"}
+  ],
+
+  "expected_items": [
+    {
+      "id": "E1",
+      "required": true,
+      "category": "Bring",
+      "text": "Photo ID",
+      "source": {"doc": "D1", "quote": "Please bring a photo ID and your insurance card."},
+      "match_keywords": ["photo id"],
+      "medical_instruction": false
+    },
+    {
+      "id": "E2",
+      "required": true,
+      "category": "Bring",
+      "text": "Insurance card",
+      "source": {"doc": "D1", "quote": "Please bring a photo ID and your insurance card."},
+      "match_keywords": ["insurance card"],
+      "medical_instruction": false
+    },
+    {
+      "id": "E3",
+      "required": true,
+      "category": "Bring",
+      "text": "A list of current medications, including creams or ointments",
+      "source": {"doc": "D1", "quote": "Please also bring a list of your current medications, including any creams or ointments."},
+      "match_keywords": ["medication", "list"],
+      "medical_instruction": false
+    },
+    {
+      "id": "E4",
+      "required": true,
+      "category": "Bring",
+      "text": "Results from previous skin tests or reports from other doctors",
+      "source": {"doc": "D2", "quote": "Please bring any results from previous skin tests or reports from other doctors."},
+      "match_keywords": ["previous", "results"],
+      "medical_instruction": false
+    },
+    {
+      "id": "E5",
+      "required": true,
+      "category": "Do",
+      "text": "Arrive 15 minutes early to check in",
+      "source": {"doc": "D1", "quote": "Please arrive 15 minutes early to check in."},
+      "match_keywords": ["15 minutes"],
+      "medical_instruction": false
+    },
+    {
+      "id": "E6",
+      "required": true,
+      "category": "Before-date",
+      "text": "Complete the new-patient health history form in the patient portal by December 6",
+      "due_date": "2026-12-06",
+      "source": {"doc": "D2", "quote": "Please complete the new-patient health history form in the patient portal by December 6."},
+      "match_keywords": ["form", "december 6"],
+      "medical_instruction": false
+    },
+    {
+      "id": "E7",
+      "required": false,
+      "category": "Do",
+      "text": "Free parking behind the building at 400 Harbor Street, Suite 210",
+      "source": {"doc": "D1", "quote": "Free parking is available behind the building."},
+      "match_keywords": ["parking"],
+      "medical_instruction": false
+    },
+    {
+      "id": "E8",
+      "required": false,
+      "category": "Do",
+      "text": "To reschedule or cancel, call 555-0177 at least 24 hours ahead",
+      "source": {"doc": "D1", "quote": "To reschedule or cancel, call 555-0177 at least 24 hours before your appointment."},
+      "match_keywords": ["555-0177"],
+      "medical_instruction": false
+    }
+  ],
+
+  "expected_conflicts": [],
+
+  "covered_topics": ["photo_id", "insurance_card", "previous_records", "medication_list", "arrival_time", "location_parking", "forms", "reschedule_cancel"],
+  "expected_missing_topics": ["referral_on_file", "test_preparation"],
+
+  "must_not": [
+    "Create a patient task from 'Our staff will verify your insurance before your visit.' (the clinic does this, not the patient)",
+    "Create a patient task from 'We will send you a reminder text two days before your visit.' (the clinic does this)",
+    "Report any conflict (there are none)",
+    "Label any item as a medical instruction (there are none)",
+    "Add 'Ask the clinic' items for topics that ARE covered (false gaps), for example photo ID, parking, or forms",
+    "Add skincare or treatment advice of any kind"
+  ],
+
+  "scoring_notes": "Completeness = required items found / 6. Optional items (E7, E8) are neither required nor penalized. This set mainly measures PRECISION: count invented items, false conflicts, false medical labels, and false gaps. Target: zero of each."
+}

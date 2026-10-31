@@ -1,0 +1,10 @@
+SYNTHETIC TEST DOCUMENT. NOT A REAL PATIENT.
+(Patient portal message)
+
+Hello from Riverside Dermatology (example).
+
+Please complete the new-patient health history form in the patient portal by December 6.
+
+Please bring any results from previous skin tests or reports from other doctors.
+
+We will send you a reminder text two days before your visit.
