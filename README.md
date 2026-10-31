@@ -44,10 +44,10 @@ First-time specialist patients often don't know exactly what to bring or do befo
 | Stage | Focus | Status |
 |---|---|---|
 | 1 | Product vision & strategy | ✅ Complete |
-| 2 | Discovery & user interviews | 🔄 Interim findings done; interviews pending |
-| 3 | Personas & competitor analysis | 🔄 Competitors done; proto-personas pending validation |
+| 2 | Discovery & user interviews | 🔄 Round 1 done (3 responses, 0 screened); follow-ups & more interviews pending |
+| 3 | Personas & competitor analysis | 🔄 Competitors done; proto-personas updated with Round 1 evidence |
 | 4 | Prioritization & MVP scope | ✅ Complete |
-| 5 | Product Requirements Document | 🟡 v0.1 draft |
+| 5 | Product Requirements Document | 🟡 v0.2 draft (v1.0 after screened interviews) |
 | 6 | Agile backlog (Jira) | ✅ Backlog ready |
 | 7 | UX & prototype | 🟡 Wireframes v0.1; usability tests pending |
 | 8 | Technical & AI architecture | ✅ v0.1 |
@@ -75,7 +75,7 @@ docs/
 ├── 04-prioritization/
 │   └── prioritization-and-roadmap.md  RICE, MoSCoW, MVP scope, roadmap
 ├── 05-prd/
-│   └── prd.md                 Product Requirements Document (v0.1)
+│   └── prd.md                 Product Requirements Document (v0.2)
 ├── 06-agile/
 │   ├── agile-and-jira-guide.md   Epics, sprints, DoR/DoD, team workflow
 │   └── carepath-jira-import.csv  Jira import file (8 epics, 15 stories)
