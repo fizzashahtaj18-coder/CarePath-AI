@@ -35,6 +35,9 @@ Records key product decisions, the reasoning behind them, and open questions.
 | 28 | Three-step flow (Set up → Review draft → Prepare) with a split review screen: checklist + source panel | Citations are the main trust mechanism, so the source must be one click away |
 | 29 | Every label pairs an icon with words; Atkinson Hyperlegible typeface; 17px base; ≥44px targets; WCAG 4.5:1 contrast | Low health literacy and accessibility; never rely on color alone |
 | 30 | No AI-generated doctor questions; the patient adds their own ("Added by you") | Keeps the product administrative-only while addressing the "forgot my questions" pain |
+| 31 | Architecture: single Streamlit app; one LLM call; citations, safety keywords, and missing topics checked in code; session-only storage; no SQLite or vector DB in MVP | Simplest design that meets the PRD; safety never depends on the model alone (ADR-1 to ADR-7) |
+| 32 | pypdf instead of PyMuPDF for PDF extraction | PyMuPDF is AGPL-licensed; pypdf is BSD and sufficient for short text PDFs |
+| 33 | Model: shortlist small, low-cost models (~$0.002 per checklist); final pick by test-set results and provider data terms in Stage 9; LLM behind a swappable wrapper | Cost isn't the constraint; quality and data terms are |
 
 ## Open questions (Stage 2)
 - 🚩 **Riskiest strategic question:** is the information disorganized, or missing? See assumptions.md for the full ranked list.
