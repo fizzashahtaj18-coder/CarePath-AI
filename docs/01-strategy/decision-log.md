@@ -27,6 +27,9 @@ Records key product decisions, the reasoning behind them, and open questions.
 | 20 | No vector-database RAG in the MVP: grounded generation with chunk-ID citations verified by code. RAG moves to F12 (curated knowledge base, Could have / stretch) | Patient documents fit in the context window; RAG is used only where the corpus is too large for a prompt |
 | 21 | Build the synthetic evaluation set (Week 5) before coding (Week 6) | Evaluation-driven development: define what "good" looks like first |
 | 22 | Cut line if behind: PDF upload first, then setup; never cut extraction, citations, missing-information flags, guardrails, or review | Protect the core value and safety |
+| 23 | Session-only data: no database storage of documents by default; "Delete everything" button; export instead of accounts | Trust is the biggest adoption risk; less data to secure |
+| 24 | The missing-information topic list is a fixed, PM-reviewed configuration file, not AI-generated | Keeps gap detection predictable, testable, and administration-only |
+| 25 | The AI never chooses between conflicting instructions; it shows both with citations | Avoids silent errors on safety-relevant details |
 
 ## Open questions (Stage 2)
 - 🚩 **Riskiest strategic question:** is the information disorganized, or missing? See assumptions.md for the full ranked list.
