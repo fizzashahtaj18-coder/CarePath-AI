@@ -4,7 +4,7 @@
 
 CarePath AI is an AI Product Management portfolio project. It is a web application concept that turns scattered appointment documents and instructions into one editable preparation checklist, with a source citation for every item.
 
-🚧 **Project status:** Architecture v0.1 done (Stage 8) · email interviews in progress · Next: Sprint 0, synthetic test set & evaluation script.
+🚧 **Project status:** Sprint 0 in progress: synthetic evaluation set ✅ (10 sets) · Next: evaluation script (CPA-13) · email interviews continuing.
 
 ---
 
@@ -83,6 +83,12 @@ docs/
 │   └── ux-design.md           User flow, information architecture, screens, test plan
 └── 08-architecture/
     └── architecture.md        System diagram, components, model choice, cost, ADRs
+```
+```
+config/
+└── topics.yaml                Common administrative topics (PM-reviewed)
+eval/
+└── testset/                   10 synthetic document sets + answer keys (see its README)
 ```
 More folders will be added as each stage begins.
 
