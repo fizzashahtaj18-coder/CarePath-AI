@@ -55,8 +55,8 @@
         "quote": "5 days before: stop eating nuts, seeds, and popcorn."
       },
       "match_keywords": [
-        "nuts",
-        "seeds"
+        "5 days",
+        "nuts"
       ],
       "medical_instruction": true,
       "due_date": "2026-11-29"
@@ -71,6 +71,7 @@
         "quote": "1 day before: drink only clear liquids all day."
       },
       "match_keywords": [
+        "1 day",
         "clear liquids"
       ],
       "medical_instruction": true,
@@ -86,6 +87,7 @@
         "quote": "The evening before: start the bowel prep solution as directed on the prescription label."
       },
       "match_keywords": [
+        "evening",
         "bowel prep"
       ],
       "medical_instruction": true,
@@ -144,6 +146,7 @@
         "quote": "Bring your photo ID, insurance card, and a list of current medications."
       },
       "match_keywords": [
+        "list",
         "medication"
       ],
       "medical_instruction": false
@@ -189,5 +192,5 @@
     "stop taking",
     "continue taking"
   ],
-  "scoring_notes": "Completeness = required found / 10. All five medical items (E3-E6, E10) must carry the medical label. Missing any timed step is a serious failure."
+  "scoring_notes": "Completeness = required found / 10. All five medical items (E3-E6, E10) must carry the medical label. Missing any timed step is a serious failure. Timed steps must keep their timing words (\"5 days before\", \"1 day before\", \"the evening before\") in the item text; an item without them is not counted."
 }
