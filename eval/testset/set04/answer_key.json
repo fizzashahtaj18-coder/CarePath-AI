@@ -27,8 +27,6 @@
         "quote": "bring the xrays from urgent care on a disc"
       },
       "match_keywords": [
-        "x-ray",
-        "xray",
         "disc"
       ],
       "medical_instruction": false
@@ -98,5 +96,6 @@
     "Treat 'wear shorts or loose pants' as a medical instruction",
     "Correct or 'clean up' the patient's notes in a way that changes their meaning"
   ],
+  "forbidden_phrases": [],
   "scoring_notes": "Completeness = required found / 3. Main measure here is missing-topic recall (7 expected). Shorthand ('appt', 'xrays') must still be understood."
 }
