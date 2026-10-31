@@ -1,0 +1,14 @@
+SYNTHETIC TEST DOCUMENT. NOT A REAL PATIENT.
+Oak Street Family Medicine (example)
+December 1, 2026
+
+To: Bayview Endocrinology (example)
+Re: Alex Kim (synthetic patient)
+
+I am referring this patient for a first endocrinology visit.
+
+The appointment is scheduled for Tuesday, January 12, 2027 at 11:00 AM.
+
+Please have fasting blood work done at least one week before the visit.
+
+Dr. L. Gomez (example)

@@ -1,0 +1,96 @@
+{
+  "set_id": "set08",
+  "specialty": "Rheumatology",
+  "author": "Drafted with mentor; reviewed by PM",
+  "description": "One document is a scanned (image-only) PDF with no extractable text, plus pasted notes. Tests the scanned-PDF error message and that nothing is invented for the unreadable file.",
+  "edge_cases": [
+    "scanned_pdf",
+    "document_error",
+    "spoken_instructions"
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "file": "D1_scanned_letter.pdf",
+      "type": "pdf",
+      "title": "Scanned letter (image only)"
+    },
+    {
+      "id": "D2",
+      "file": "D2_phone_call_notes.txt",
+      "type": "pasted",
+      "title": "Phone call notes"
+    }
+  ],
+  "expected_document_errors": [
+    {
+      "doc": "D1",
+      "error": "no_extractable_text"
+    }
+  ],
+  "expected_items": [
+    {
+      "id": "E1",
+      "required": true,
+      "category": "Bring",
+      "text": "All medicine bottles",
+      "source": {
+        "doc": "D2",
+        "quote": "Bring all medicine bottles"
+      },
+      "match_keywords": [
+        "bottles"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E2",
+      "required": true,
+      "category": "Do",
+      "text": "Arrive 20 minutes early",
+      "source": {
+        "doc": "D2",
+        "quote": "Arrive 20 min early"
+      },
+      "match_keywords": [
+        "20 min"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E3",
+      "required": true,
+      "category": "Before-date",
+      "text": "Get blood drawn at the lab the week before",
+      "source": {
+        "doc": "D2",
+        "quote": "Get blood drawn at the lab the week before"
+      },
+      "match_keywords": [
+        "blood"
+      ],
+      "medical_instruction": true
+    }
+  ],
+  "expected_conflicts": [],
+  "covered_topics": [
+    "medication_list",
+    "arrival_time",
+    "test_preparation"
+  ],
+  "expected_missing_topics": [
+    "photo_id",
+    "insurance_card",
+    "referral_on_file",
+    "previous_records",
+    "location_parking",
+    "forms",
+    "reschedule_cancel"
+  ],
+  "must_not": [
+    "Claim to know anything that is written in D1 (it has no extractable text)",
+    "Create items for insurance card or photo ID (they exist only in the unreadable scan)",
+    "Silently skip D1 without telling the patient"
+  ],
+  "scoring_notes": "Completeness = required found / 3. Expected document error: D1 = no_extractable_text, shown as 'We couldn't read text in this file. You can paste the text instead.' Photo ID and insurance card should appear as 'Ask the clinic' (missing) because the scan cannot be read."
+}

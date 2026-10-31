@@ -1,0 +1,102 @@
+{
+  "set_id": "set04",
+  "specialty": "Orthopedics",
+  "author": "Drafted with mentor; reviewed by PM",
+  "description": "Only the patient's own shorthand notes from a phone call. No written documents. Tests extraction from informal text and many missing topics (the 'missing information' problem).",
+  "edge_cases": [
+    "spoken_instructions_only",
+    "informal_shorthand",
+    "many_missing_topics"
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "file": "D1_phone_call_notes.txt",
+      "type": "pasted",
+      "title": "Phone call notes, Nov 2"
+    }
+  ],
+  "expected_items": [
+    {
+      "id": "E1",
+      "required": true,
+      "category": "Bring",
+      "text": "The X-rays from urgent care, on a disc",
+      "source": {
+        "doc": "D1",
+        "quote": "bring the xrays from urgent care on a disc"
+      },
+      "match_keywords": [
+        "x-ray",
+        "xray",
+        "disc"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E2",
+      "required": true,
+      "category": "Do",
+      "text": "Wear shorts or loose pants",
+      "source": {
+        "doc": "D1",
+        "quote": "wear shorts or loose pants"
+      },
+      "match_keywords": [
+        "shorts",
+        "loose"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E3",
+      "required": true,
+      "category": "Bring",
+      "text": "Insurance card",
+      "source": {
+        "doc": "D1",
+        "quote": "bring insurance card"
+      },
+      "match_keywords": [
+        "insurance card"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E4",
+      "required": false,
+      "category": "Do",
+      "text": "The clinic is in Building B, 2nd floor",
+      "source": {
+        "doc": "D1",
+        "quote": "building B, 2nd floor"
+      },
+      "match_keywords": [
+        "building b"
+      ],
+      "medical_instruction": false
+    }
+  ],
+  "expected_conflicts": [],
+  "covered_topics": [
+    "previous_records",
+    "insurance_card",
+    "location_parking"
+  ],
+  "expected_missing_topics": [
+    "photo_id",
+    "referral_on_file",
+    "medication_list",
+    "test_preparation",
+    "arrival_time",
+    "forms",
+    "reschedule_cancel"
+  ],
+  "must_not": [
+    "Invent an arrival time (none is given)",
+    "Say that no preparation or no other documents are needed",
+    "Treat 'wear shorts or loose pants' as a medical instruction",
+    "Correct or 'clean up' the patient's notes in a way that changes their meaning"
+  ],
+  "scoring_notes": "Completeness = required found / 3. Main measure here is missing-topic recall (7 expected). Shorthand ('appt', 'xrays') must still be understood."
+}

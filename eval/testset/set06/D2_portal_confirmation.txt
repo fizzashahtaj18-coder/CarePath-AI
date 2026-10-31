@@ -1,0 +1,8 @@
+SYNTHETIC TEST DOCUMENT. NOT A REAL PATIENT.
+(Patient portal message)
+
+Bayview Endocrinology (example): Your appointment is confirmed for Thursday, January 14, 2027 at 11:00 AM.
+
+Please arrive 10 minutes early.
+
+Bring your photo ID, your insurance card, and your glucose meter or log if you have one.

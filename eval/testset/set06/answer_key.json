@@ -1,0 +1,136 @@
+{
+  "set_id": "set06",
+  "specialty": "Endocrinology",
+  "author": "Drafted with mentor; reviewed by PM",
+  "description": "Two documents give different appointment dates. A deadline ('one week before your visit') depends on that date. Tests the conflict rule and that the AI does not compute a single deadline from a disputed date.",
+  "edge_cases": [
+    "conflict_dates",
+    "dependent_deadline",
+    "medical_instruction"
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "file": "D1_referral_letter.txt",
+      "type": "pdf",
+      "title": "Referral letter"
+    },
+    {
+      "id": "D2",
+      "file": "D2_portal_confirmation.txt",
+      "type": "pasted",
+      "title": "Patient portal confirmation"
+    }
+  ],
+  "expected_items": [
+    {
+      "id": "E1",
+      "required": true,
+      "category": "Before-date",
+      "text": "Have fasting blood work done at least one week before the visit",
+      "source": {
+        "doc": "D1",
+        "quote": "Please have fasting blood work done at least one week before the visit."
+      },
+      "match_keywords": [
+        "fasting",
+        "blood work"
+      ],
+      "medical_instruction": true
+    },
+    {
+      "id": "E2",
+      "required": true,
+      "category": "Do",
+      "text": "Arrive 10 minutes early",
+      "source": {
+        "doc": "D2",
+        "quote": "Please arrive 10 minutes early."
+      },
+      "match_keywords": [
+        "10 minutes"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E3",
+      "required": true,
+      "category": "Bring",
+      "text": "Photo ID",
+      "source": {
+        "doc": "D2",
+        "quote": "Bring your photo ID, your insurance card, and your glucose meter or log if you have one."
+      },
+      "match_keywords": [
+        "photo id"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E4",
+      "required": true,
+      "category": "Bring",
+      "text": "Insurance card",
+      "source": {
+        "doc": "D2",
+        "quote": "Bring your photo ID, your insurance card, and your glucose meter or log if you have one."
+      },
+      "match_keywords": [
+        "insurance card"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E5",
+      "required": true,
+      "category": "Bring",
+      "text": "Glucose meter or log, if you have one",
+      "source": {
+        "doc": "D2",
+        "quote": "Bring your photo ID, your insurance card, and your glucose meter or log if you have one."
+      },
+      "match_keywords": [
+        "glucose"
+      ],
+      "medical_instruction": false
+    }
+  ],
+  "expected_conflicts": [
+    {
+      "id": "C1",
+      "topic": "appointment_date",
+      "sources": [
+        {
+          "doc": "D1",
+          "quote": "The appointment is scheduled for Tuesday, January 12, 2027 at 11:00 AM."
+        },
+        {
+          "doc": "D2",
+          "quote": "Your appointment is confirmed for Thursday, January 14, 2027 at 11:00 AM."
+        }
+      ],
+      "rule": "Show both dates with citations and suggest asking the clinic. Never choose one."
+    }
+  ],
+  "covered_topics": [
+    "test_preparation",
+    "arrival_time",
+    "photo_id",
+    "insurance_card"
+  ],
+  "expected_missing_topics": [
+    "referral_on_file",
+    "previous_records",
+    "medication_list",
+    "location_parking",
+    "forms",
+    "reschedule_cancel"
+  ],
+  "must_not": [
+    "Choose January 12 or January 14 as the correct date",
+    "Give E1 a single calendar due date (it depends on the disputed date); relative wording or a note to confirm the date is correct",
+    "Explain what fasting means or how long to fast (not stated in the documents)",
+    "Give advice about blood sugar or diabetes"
+  ],
+  "scoring_notes": "Completeness = required found / 5. The conflict counts as found only if both dates are cited and none is chosen. E1 must keep the medical label."
+}

@@ -1,0 +1,14 @@
+SYNTHETIC TEST DOCUMENT. NOT A REAL PATIENT.
+Hillside Primary Care (example)
+November 3, 2026
+
+To: Lakeside Neurology (example)
+Re: Sam Patel (synthetic patient)
+
+I am referring this patient for a first neurology consultation.
+
+Please ask the patient to bring all current medications in their original bottles.
+
+The patient should continue taking all current medications as prescribed unless told otherwise by the neurology team.
+
+Dr. M. Chen (example)

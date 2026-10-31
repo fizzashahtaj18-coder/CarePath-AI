@@ -1,6 +1,6 @@
 # Synthetic Evaluation Set
 
-**Jira:** CPA-9 (Sprint 0) · **Owner:** Product Manager
+**Jira:** CPA-9 (Sprint 0) · **Owner:** Product Manager · **Status:** ✅ 10 of 10 sets complete
 **Purpose:** Define what a *correct* checklist looks like **before** any code is written, so every build step can be measured ([architecture §5](../../docs/08-architecture/architecture.md), [PRD §14 release criteria](../../docs/05-prd/prd.md)).
 
 > ⚠️ **Every document here is synthetic.** Names, clinics, dates, and phone numbers (555-01xx) are made up. Never add real patient documents.
@@ -20,7 +20,7 @@ eval/testset/
 └── …
 ```
 
-Documents are plain `.txt` so they're easy to read and edit. (For the scanned-PDF case, Set 08 will also contain a real image-only PDF.)
+Documents are plain `.txt` so they're easy to read and edit. Set 08 also contains a real image-only PDF (`D1_scanned_letter.pdf`) with no extractable text.
 
 ## The answer key: field guide
 
@@ -35,6 +35,9 @@ Documents are plain `.txt` so they're easy to read and edit. (For the scanned-PD
 | `expected_conflicts` | Instructions that disagree; both sources must be cited and **no single answer chosen** |
 | `covered_topics` / `expected_missing_topics` | Topic IDs from [`config/topics.yaml`](../../config/topics.yaml). Missing ones should become "Ask the clinic" items |
 | `must_not` | Things a correct output must **never** do. Any medical-guidance violation blocks release |
+| `also_sources` | Other places the same instruction appears (Set 10). One item, several citations |
+| `expected_document_errors` | Documents that can't be read (Set 08), and the expected error |
+| `expected_outcome` | A whole-set result instead of a checklist (Set 09: `no_instructions_found`) |
 
 ## How each metric is computed
 
@@ -49,17 +52,18 @@ Documents are plain `.txt` so they're easy to read and edit. (For the scanned-PD
 
 Each set targets specific risks, so together they test every PRD safety rule.
 
-| Set | Specialty | Main edge cases | Author | Status |
+| Set | Specialty | Main edge cases | Required items | Status |
 |---|---|---|---|---|
-| 01 | Cardiology | Medical instruction · conflict (arrival time) · 2 missing topics · phone notes | PM + mentor (worked example) | ✅ Done |
-| 02 | Dermatology | **Clean case:** everything in writing, few gaps. Tests that the AI doesn't invent items or false gaps | Drafted with mentor; reviewed by PM | ✅ Done |
-| 03 | Neurology | Medication instructions (must be labeled, never changed) | | ⏳ |
-| 04 | Orthopedics | **Only phone notes** (no written documents) · bring imaging | | ⏳ |
-| 05 | Gastroenterology | Many medical preparation steps · multiple deadlines | | ⏳ |
-| 06 | Endocrinology | **Conflicting dates** between two documents | | ⏳ |
-| 07 | ENT | **Prompt injection** line inside a document | | ⏳ |
-| 08 | Any | **Scanned PDF** with no text + pasted notes | | ⏳ |
-| 09 | Any | **No administrative instructions** at all (clinical letter only) → "no instructions found" | | ⏳ |
-| 10 | Any | **Same instruction in two documents** → one item, two citations | | ⏳ |
+| 01 | Cardiology | Medical instruction · conflict (arrival time) · 2 missing topics · phone notes | 5 | ✅ |
+| 02 | Dermatology | **Clean case:** no conflicts, no medical items, only 2 gaps. Tests precision (no invented items or false gaps) | 6 | ✅ |
+| 03 | Neurology | Medication instructions: "bring bottles" (admin) vs "continue taking" (medical) | 6 | ✅ |
+| 04 | Orthopedics | **Only shorthand phone notes**, no written documents · 7 missing topics | 3 | ✅ |
+| 05 | Gastroenterology | **Many timed medical steps** + relative deadlines + driver requirement | 10 | ✅ |
+| 06 | Endocrinology | **Conflicting appointment dates** + a deadline that depends on the disputed date | 5 | ✅ |
+| 07 | ENT | **Prompt injection** inside a forwarded email | 5 | ✅ |
+| 08 | Rheumatology | **Real scanned (image-only) PDF** + pasted notes | 3 | ✅ |
+| 09 | Visit summary only | **No administrative instructions** → "no instructions found" | 0 | ✅ |
+| 10 | Pulmonology | **Same instruction in two documents** + format differences that are NOT conflicts | 4 | ✅ |
+| | | | **47 total** | |
 
-Coverage check: specialties ≥ 4 ✅ (planned 6+); conflict ✅ (01, 06); medical instruction ✅ (01, 03, 05); missing topics ✅; prompt injection ✅ (07); scanned PDF ✅ (08); no instructions ✅ (09); duplicates ✅ (10).
+Coverage check: specialties ≥ 4 ✅ (9 specialties); conflict ✅ (01, 06); medical instruction ✅ (01, 03, 05); missing topics ✅; prompt injection ✅ (07); scanned PDF ✅ (08); no instructions ✅ (09); duplicates ✅ (10).

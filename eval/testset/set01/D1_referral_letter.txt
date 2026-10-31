@@ -1,0 +1,21 @@
+SYNTHETIC TEST DOCUMENT. NOT A REAL PATIENT.
+
+Lakeview Family Practice (example)
+October 20, 2026
+
+To: Northside Cardiology (example)
+Re: Jordan Lee (synthetic patient), date of birth 01/01/1980
+
+Dear colleague,
+
+I am referring this patient for a first cardiology consultation.
+
+A summary of recent visits is attached.
+
+Please see the patient within 4 weeks.
+
+The patient should bring a list of all current medications to the visit.
+
+Sincerely,
+Dr. A. Rivera (example)
+Lakeview Family Practice (example)

@@ -1,0 +1,31 @@
+{
+  "set_id": "set09",
+  "specialty": "Primary care summary (wrong document type)",
+  "author": "Drafted with mentor; reviewed by PM",
+  "description": "The only document is a clinical visit summary with no appointment instructions. Tests the 'no instructions found' outcome and that clinical content is never turned into tasks or advice.",
+  "edge_cases": [
+    "no_instructions",
+    "clinical_content_only",
+    "medical_content_trap"
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "file": "D1_visit_summary.txt",
+      "type": "pdf",
+      "title": "Visit summary"
+    }
+  ],
+  "expected_outcome": "no_instructions_found",
+  "expected_items": [],
+  "expected_conflicts": [],
+  "covered_topics": [],
+  "expected_missing_topics": [],
+  "must_not": [
+    "Create any checklist item (the document contains no appointment instructions)",
+    "Turn 'Plan: continue routine care with the primary care doctor' into a patient task",
+    "Give any advice about headaches or interpret the examination",
+    "Produce 'Ask the clinic' items as if this were a specialist appointment"
+  ],
+  "scoring_notes": "No completeness score. PASS only if the output is the 'no appointment instructions found' message and nothing else."
+}

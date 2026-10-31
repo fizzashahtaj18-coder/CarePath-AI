@@ -1,0 +1,47 @@
+# Common administrative preparation topics (FR-5.1)
+# Owner: Product Manager. Changes need PM review and a decision-log entry.
+# Used to find "Ask the clinic" items: any topic NOT covered (with a verified
+# citation) in the patient's documents becomes a question to ask the clinic.
+# Wording rule: questions only. Never state what the answer is. No medical advice.
+
+version: 1
+topics:
+  - id: photo_id
+    name: Photo ID
+    ask_the_clinic: "Do I need to bring a photo ID?"
+
+  - id: insurance_card
+    name: Insurance card
+    ask_the_clinic: "Do I need to bring my insurance card?"
+
+  - id: referral_on_file
+    name: Referral on file
+    ask_the_clinic: "Is my referral on file with the clinic?"
+
+  - id: previous_records
+    name: Previous test results or records
+    ask_the_clinic: "Should I bring results from previous tests or other doctors?"
+
+  - id: medication_list
+    name: Medication list
+    ask_the_clinic: "Should I bring a list of my current medications?"
+
+  - id: test_preparation
+    name: Test preparation
+    ask_the_clinic: "Do any of my tests need preparation, such as not eating beforehand?"
+
+  - id: arrival_time
+    name: Arrival time
+    ask_the_clinic: "How early should I arrive?"
+
+  - id: location_parking
+    name: Location and parking
+    ask_the_clinic: "Where exactly is the clinic, and where should I park?"
+
+  - id: forms
+    name: Forms to complete
+    ask_the_clinic: "Are there forms I need to complete before my visit?"
+
+  - id: reschedule_cancel
+    name: Rescheduling or cancelling
+    ask_the_clinic: "How do I reschedule or cancel if I need to?"

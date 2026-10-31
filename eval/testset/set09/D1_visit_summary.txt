@@ -1,0 +1,10 @@
+SYNTHETIC TEST DOCUMENT. NOT A REAL PATIENT.
+Greenfield Family Clinic (example)
+Visit Summary, October 2, 2026
+Patient: Riley Brooks (synthetic patient)
+
+The patient reported occasional headaches.
+
+Examination was normal.
+
+Plan: continue routine care with the primary care doctor.

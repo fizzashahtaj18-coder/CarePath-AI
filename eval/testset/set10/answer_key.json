@@ -1,0 +1,137 @@
+{
+  "set_id": "set10",
+  "specialty": "Pulmonology",
+  "author": "Drafted with mentor; reviewed by PM",
+  "description": "The same instructions appear in a letter and a reminder text, in different formats (12/21 vs December 21). Tests de-duplication (one item, two citations) and that format differences are NOT reported as conflicts.",
+  "edge_cases": [
+    "duplicate_instructions",
+    "format_differences_not_conflicts",
+    "optional_info_items"
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "file": "D1_appointment_letter.txt",
+      "type": "pdf",
+      "title": "Appointment letter"
+    },
+    {
+      "id": "D2",
+      "file": "D2_reminder_text.txt",
+      "type": "pasted",
+      "title": "Reminder text message"
+    }
+  ],
+  "expected_items": [
+    {
+      "id": "E1",
+      "required": true,
+      "category": "Bring",
+      "text": "Insurance card",
+      "source": {
+        "doc": "D1",
+        "quote": "Please bring your insurance card and photo ID."
+      },
+      "match_keywords": [
+        "insurance card"
+      ],
+      "medical_instruction": false,
+      "also_sources": [
+        {
+          "doc": "D2",
+          "quote": "Bring insurance card + photo ID."
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "required": true,
+      "category": "Bring",
+      "text": "Photo ID",
+      "source": {
+        "doc": "D1",
+        "quote": "Please bring your insurance card and photo ID."
+      },
+      "match_keywords": [
+        "photo id"
+      ],
+      "medical_instruction": false,
+      "also_sources": [
+        {
+          "doc": "D2",
+          "quote": "Bring insurance card + photo ID."
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "required": true,
+      "category": "Do",
+      "text": "Arrive 15 minutes early",
+      "source": {
+        "doc": "D1",
+        "quote": "Please arrive 15 minutes early."
+      },
+      "match_keywords": [
+        "15 min"
+      ],
+      "medical_instruction": false,
+      "also_sources": [
+        {
+          "doc": "D2",
+          "quote": "Arrive 15 min early."
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "required": true,
+      "category": "Before-date",
+      "text": "Complete the registration form online by December 18",
+      "source": {
+        "doc": "D1",
+        "quote": "Complete the registration form online by December 18."
+      },
+      "match_keywords": [
+        "registration form"
+      ],
+      "medical_instruction": false,
+      "due_date": "2026-12-18"
+    },
+    {
+      "id": "E5",
+      "required": false,
+      "category": "Do",
+      "text": "Reply C to the reminder text to confirm",
+      "source": {
+        "doc": "D2",
+        "quote": "Reply C to confirm."
+      },
+      "match_keywords": [
+        "reply c"
+      ],
+      "medical_instruction": false
+    }
+  ],
+  "expected_conflicts": [],
+  "covered_topics": [
+    "insurance_card",
+    "photo_id",
+    "arrival_time",
+    "forms"
+  ],
+  "expected_missing_topics": [
+    "referral_on_file",
+    "previous_records",
+    "medication_list",
+    "test_preparation",
+    "location_parking",
+    "reschedule_cancel"
+  ],
+  "must_not": [
+    "List the same instruction twice (E1-E3 must each appear once)",
+    "Report a conflict between 'December 21, 2026' and '12/21' (same date, different format)",
+    "Report a conflict between '15 minutes' and '15 min'"
+  ],
+  "scoring_notes": "Completeness = required found / 4. Duplicate items count as errors. Citing both sources (also_sources) is ideal; at least one valid citation is required."
+}

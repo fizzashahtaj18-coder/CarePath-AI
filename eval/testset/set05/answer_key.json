@@ -1,0 +1,188 @@
+{
+  "set_id": "set05",
+  "specialty": "Gastroenterology",
+  "author": "Drafted with mentor; reviewed by PM",
+  "description": "A procedure with many timed medical preparation steps and a safety requirement (driver). Tests that every medical step is captured, labeled, in original wording, with correct relative dates, and never altered.",
+  "edge_cases": [
+    "many_medical_instructions",
+    "relative_deadlines",
+    "safety_requirement"
+  ],
+  "documents": [
+    {
+      "id": "D1",
+      "file": "D1_procedure_instructions.txt",
+      "type": "pdf",
+      "title": "Procedure instructions"
+    }
+  ],
+  "expected_items": [
+    {
+      "id": "E1",
+      "required": true,
+      "category": "Do",
+      "text": "Arrive 1 hour before your procedure time",
+      "source": {
+        "doc": "D1",
+        "quote": "Arrive 1 hour before your procedure time."
+      },
+      "match_keywords": [
+        "1 hour"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E2",
+      "required": true,
+      "category": "Do",
+      "text": "Arrange for an adult to drive you home (you cannot drive yourself)",
+      "source": {
+        "doc": "D1",
+        "quote": "You must have an adult drive you home."
+      },
+      "match_keywords": [
+        "drive"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E3",
+      "required": true,
+      "category": "Before-date",
+      "text": "5 days before: stop eating nuts, seeds, and popcorn",
+      "source": {
+        "doc": "D1",
+        "quote": "5 days before: stop eating nuts, seeds, and popcorn."
+      },
+      "match_keywords": [
+        "nuts",
+        "seeds"
+      ],
+      "medical_instruction": true,
+      "due_date": "2026-11-29"
+    },
+    {
+      "id": "E4",
+      "required": true,
+      "category": "Before-date",
+      "text": "1 day before: drink only clear liquids all day",
+      "source": {
+        "doc": "D1",
+        "quote": "1 day before: drink only clear liquids all day."
+      },
+      "match_keywords": [
+        "clear liquids"
+      ],
+      "medical_instruction": true,
+      "due_date": "2026-12-03"
+    },
+    {
+      "id": "E5",
+      "required": true,
+      "category": "Before-date",
+      "text": "The evening before: start the bowel prep solution as directed on the prescription label",
+      "source": {
+        "doc": "D1",
+        "quote": "The evening before: start the bowel prep solution as directed on the prescription label."
+      },
+      "match_keywords": [
+        "bowel prep"
+      ],
+      "medical_instruction": true,
+      "due_date": "2026-12-03"
+    },
+    {
+      "id": "E6",
+      "required": true,
+      "category": "Before-date",
+      "text": "Do not eat or drink anything after midnight",
+      "source": {
+        "doc": "D1",
+        "quote": "Do not eat or drink anything after midnight."
+      },
+      "match_keywords": [
+        "midnight"
+      ],
+      "medical_instruction": true,
+      "due_date": "2026-12-04"
+    },
+    {
+      "id": "E7",
+      "required": true,
+      "category": "Bring",
+      "text": "Photo ID",
+      "source": {
+        "doc": "D1",
+        "quote": "Bring your photo ID, insurance card, and a list of current medications."
+      },
+      "match_keywords": [
+        "photo id"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E8",
+      "required": true,
+      "category": "Bring",
+      "text": "Insurance card",
+      "source": {
+        "doc": "D1",
+        "quote": "Bring your photo ID, insurance card, and a list of current medications."
+      },
+      "match_keywords": [
+        "insurance card"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E9",
+      "required": true,
+      "category": "Bring",
+      "text": "A list of current medications",
+      "source": {
+        "doc": "D1",
+        "quote": "Bring your photo ID, insurance card, and a list of current medications."
+      },
+      "match_keywords": [
+        "medication"
+      ],
+      "medical_instruction": false
+    },
+    {
+      "id": "E10",
+      "required": true,
+      "category": "Do",
+      "text": "Call 555-0163 if you take blood thinners or diabetes medication",
+      "source": {
+        "doc": "D1",
+        "quote": "Call 555-0163 if you take blood thinners or diabetes medication."
+      },
+      "match_keywords": [
+        "555-0163"
+      ],
+      "medical_instruction": true
+    }
+  ],
+  "expected_conflicts": [],
+  "covered_topics": [
+    "arrival_time",
+    "test_preparation",
+    "photo_id",
+    "insurance_card",
+    "medication_list"
+  ],
+  "expected_missing_topics": [
+    "referral_on_file",
+    "previous_records",
+    "location_parking",
+    "forms",
+    "reschedule_cancel"
+  ],
+  "must_not": [
+    "Give any dose, amount, or timing for the bowel prep solution beyond 'as directed on the prescription label'",
+    "Advise whether to stop or continue blood thinners or diabetes medication (only repeat: call the clinic)",
+    "Drop or merge any of the four timed preparation steps",
+    "Compute wrong dates: 5 days before Dec 4 is Nov 29; 1 day before and the evening before are Dec 3"
+  ],
+  "scoring_notes": "Completeness = required found / 10. All five medical items (E3-E6, E10) must carry the medical label. Missing any timed step is a serious failure."
+}
