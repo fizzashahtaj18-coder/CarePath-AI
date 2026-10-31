@@ -32,6 +32,9 @@ Records key product decisions, the reasoning behind them, and open questions.
 | 25 | The AI never chooses between conflicting instructions; it shows both with citations | Avoids silent errors on safety-relevant details |
 | 26 | One-week sprints (Sprint 0–5, Weeks 5–10); 56 story points; Sprint 0 builds the evaluation set first | Matches the roadmap; evaluation-driven development |
 | 27 | AI-specific Definition of Done: every AI story re-runs the evaluation and must not lower scores | AI output can get worse without any code error |
+| 28 | Three-step flow (Set up → Review draft → Prepare) with a split review screen: checklist + source panel | Citations are the main trust mechanism, so the source must be one click away |
+| 29 | Every label pairs an icon with words; Atkinson Hyperlegible typeface; 17px base; ≥44px targets; WCAG 4.5:1 contrast | Low health literacy and accessibility; never rely on color alone |
+| 30 | No AI-generated doctor questions; the patient adds their own ("Added by you") | Keeps the product administrative-only while addressing the "forgot my questions" pain |
 
 ## Open questions (Stage 2)
 - 🚩 **Riskiest strategic question:** is the information disorganized, or missing? See assumptions.md for the full ranked list.
